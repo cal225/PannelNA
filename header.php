@@ -6,8 +6,8 @@ echo "
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <link rel='stylesheet' href='style/{$title}.css'>
     <link rel='stylesheet' href='style/style.css'>
+    <link rel='stylesheet' href='style/{$title}.css'>
     <title>{$title}</title>
 </head>
 ";
@@ -18,7 +18,7 @@ echo "
 
         <h1 class="timeNdate">
             <span class='date'>
-                <?= date("d-m-Y") ?>
+                <?= date("d-m- Y") ?>
             </span>
             <span class="UTCWrapper">
                 <span class='utc-time' id="utc-time">
