@@ -35,8 +35,8 @@ main {
 }
 
 .MaJ {
-  margin-top: 1em;
   font-size: large;
+  margin: 1em 0 1em 10px;
 }
 
 .metarWind {
