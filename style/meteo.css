@@ -99,6 +99,7 @@ main {
 .heureAero {
   justify-content: space-evenly;
   align-items: flex-start;
+  padding: 10px;
 }
 
 .heureSol {

@@ -1,5 +1,5 @@
 <div class="frosted cards rose">
-    <p>20° / 18°</p>
+    <p>20° / 18°</p> <img src="../../assets/high-temperature-icon 1.svg" alt="">
 </div>
 <div class="frosted cards QNH">
     <p>Q1027</p>
