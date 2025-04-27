@@ -4,13 +4,15 @@
     </div>
     <div class="mancheContainer">
         <div class="wind02">
-            <p>RWY 02</p>
+            <img src="../../assets/RWY 02.svg" alt="">
         </div>
         <div class="windCenter">
             <div class="frosted backPiste"></div>
             <img class="piste" src="../assets/Piste.svg" alt="piste d'atterisage"> <!-- déjà a 19° (orientation magnetique du pôle nord) -->
             <img class="mancheAir" src="../assets/MancheAir.svg" alt="manche à air">
         </div>
-        <div class="wind020">text and arrows</div>
+        <div class="wind020">
+            <img src="../../assets/RWY 20.svg" alt="">
+        </div>
     </div>
 </div>

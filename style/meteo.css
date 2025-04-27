@@ -3,7 +3,8 @@ body {
   background-position: center;
   background-size: cover;
   display: grid;
-  grid-template-rows: 1fr 8.5fr;
+  grid-template-rows: 0.5fr 9fr;
+  height: 100vh;
 }
 * {
   color: aliceblue;
@@ -55,7 +56,15 @@ main {
 .piste {
   width: 80%; /* or any size */
   height: auto; /* maintain aspect ratio */
-  max-width: 250px; /* optional max width */
+  max-width: 300px; /* optional max width */
+}
+
+.wind02{
+  align-self: end;
+}
+
+.wind020{
+  align-self: start;
 }
 
 .windCenter {
@@ -72,11 +81,49 @@ main {
   height: 50%;
 }
 
-.cards{
-  font-size: large;
+.cards {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px;
+}
+
+.QNH {
+  font-size: 45px;
+}
+
+.rose {
+  font-size: 40px;
+}
+
+.heureAero {
+  justify-content: space-evenly;
+  align-items: flex-start;
+}
+
+.heureSol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lfsp {
+  font-size: 35px;
+}
+
+.weatherUpdate {
+  font-size: 35px;
+  gap: 30px;
+  padding-bottom: 0px;
+}
+
+.previsiont > img {
+  height: 80px;
+}
+
+.rightContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0em 2em;
 }
