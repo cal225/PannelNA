@@ -14,7 +14,7 @@ if ($currentIndex < 0 || $currentIndex >= count($pages)) {
 $nextIndex = ($currentIndex + 1) % count($pages);
 
 // Set meta refresh to auto-rotate
-// echo '<meta http-equiv="refresh" content="5;">';
+echo '<meta http-equiv="refresh" content="5;">';
 
 
 // Set up path to the current page
