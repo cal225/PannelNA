@@ -18,11 +18,10 @@ echo "
 
         <h1 class="timeNdate">
             <span class='date'>
-                <?= date("d-m- Y") ?>
+                <?= date("d/m/Y") ?>
             </span>
             <span class="UTCWrapper">
                 <span class='utc-time' id="utc-time">
-                    <?= (new DateTime("now", new DateTimeZone("UTC")))->format("H : i : s") ?>
                 </span>
                 <span>UTC</span>
             </span>
