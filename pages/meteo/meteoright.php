@@ -2,7 +2,6 @@
     <div class="METAR_top rose">
         <p>20° / 18°</p> <img src="../../assets/high-temperature-icon 1.svg" alt="">
     </div>
-    <hr class="Metar_separator">
     <div class="METAR_bottom">
         <div class="QNH">
             <p>Q1027</p>
