@@ -47,8 +47,8 @@ main {
 
 .backPiste {
   height: 50%;
-  width: 50%;
-  /* aspect-ratio: 1/1; */
+  width: auto;
+  aspect-ratio: 1/1;
   border-radius: 100%;
   z-index: -1;
   position: absolute;
@@ -86,7 +86,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 2rem;
   text-transform: uppercase;
 }
 
@@ -97,29 +97,43 @@ main {
   grid-template-columns: 1fr;
 }
 
-.METAR_top {
+.METAR > div {
+  padding: 1rem;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 
-.Metar_separator{
-  width: 5px;
-  height: 100%;
-  background-color: white;
-  transform: rotate(90deg);
+.METAR_top {
+  justify-content: center;
 }
 
-.METAR_bottom{
- display: flex;
- justify-content: space-evenly;
- align-items: center;
+.METAR_bottom {
+  border-top: 5px white solid;
 }
 
-.METAR_bottom_separator{
+.METAR_bottom > div {
+  padding: 0 0.7rem;
+}
+
+.pressure {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+  text-transform: capitalize;
+  border-left: 5px white solid;
+
+}
+
+.pressureIcon {
+  height: 80%;
+}
+
+.METAR_separator {
+  align-self: stretch;
   width: 5px;
+  border-right: 5px white solid;
   height: 90px;
-  background-color: white;
 }
 
 .heureAero {
