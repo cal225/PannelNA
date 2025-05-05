@@ -14,11 +14,12 @@ if ($currentIndex < 0 || $currentIndex >= count($pages)) {
 $nextIndex = ($currentIndex + 1) % count($pages);
 
 // Set meta refresh to auto-rotate
-<<<<<<< HEAD
-echo '<meta http-equiv="refresh" content="5;">';
-=======
-// echo '<meta http-equiv="refresh" content="60;url=?page=' . $nextIndex . '">';
->>>>>>> parent of fcbe7c7 (test)
+// echo '<meta http-equiv="refresh" content="5;">';
+
+header("Cache-Control: no-cache, no-store, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
+
 
 // Set up path to the current page
 $currentPage = 'pages/' . $pages[$currentIndex];
