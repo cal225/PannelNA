@@ -3,7 +3,7 @@ body {
   background-position: center;
   background-size: cover;
   display: grid;
-  grid-template-rows: 1fr 8.5fr;
+  grid-template-rows: 1fr 8fr;
   height: 100vh;
 }
 * {
@@ -40,7 +40,7 @@ main {
 }
 
 .metarWind {
-  font-size: 4rem;
+  font-size: var(--sub_title_size);
   display: flex;
   justify-content: center;
 }
