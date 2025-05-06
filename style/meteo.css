@@ -112,17 +112,26 @@ main {
   display: flex;
   flex-direction: row;
   align-items: center;
-
+  width: 100%;
   padding: 0 1rem;
 }
 
 .pressure {
-  text-transform: capitalize;
   border-left: 5px white solid;
+  gap: 0.5ch;
+  align-items: center;
 }
 
 .pressureIcon {
   height: 80%;
+}
+
+.min {
+  text-transform: lowercase;
+}
+
+.QNH {
+  justify-content: space-evenly;
 }
 
 .METAR_separator {
@@ -183,7 +192,7 @@ main {
 
 @media screen and (max-width: 1900px) {
   .cards {
-    padding: 1rem;
+    padding: 0.5rem;
   }
   .weatherUpdate {
     padding-bottom: 0px;
@@ -201,12 +210,106 @@ main {
     height: 8rem;
   }
   .piste {
-    height: 34rem;
+    height: 30rem;
   }
   .backPiste {
     height: 45%;
   }
   .mancheAir {
     height: 45%;
+  }
+}
+@media screen and (max-height: 1000px) {
+  .windContainer {
+    height: 100%;
+  }
+
+  .heureSol > img {
+    height: 8rem;
+  }
+  .previsiont > img {
+    height: 7rem;
+  }
+
+  .timeNdate {
+    font-size: 3.5rem;
+  }
+}
+@media screen and (max-width: 1081px) {
+  .cards {
+    padding: 0.2rem;
+  }
+  .METAR_top > img {
+    height: 4rem;
+  }
+  .pressureIcon {
+    height: 4rem;
+  }
+  .previsiont > img {
+    height: 6rem;
+  }
+  .heureSol > img {
+    height: 6rem;
+  }
+  .piste {
+    height: 30rem;
+  }
+  .backPiste {
+    height: 40%;
+  }
+  .mancheAir {
+    height: 40%;
+  }
+  .heureSol > img {
+    height: 8rem;
+  }
+  .wind020 > img,
+  .wind02 > img {
+    height: 9rem;
+  }
+}
+
+@media only screen and (min-device-width: 700px) and (max-device-width: 1024px) and (orientation: landscape) {
+  main {
+    display: grid;
+    grid-template-columns: 4.2fr 3.1fr;
+  }
+  .cards {
+    padding: 0.2rem;
+  }
+  .METAR_top > img {
+    height: 4rem;
+  }
+  .pressureIcon {
+    height: 4rem;
+  }
+  .previsiont > img {
+    height: 6rem;
+  }
+  .piste {
+    height: 30rem;
+  }
+  .backPiste {
+    height: 40%;
+  }
+  .mancheAir {
+    height: 40%;
+  }
+  .heureSol > img {
+    height: 6rem;
+  }
+  .wind020 > img,
+  .wind02 > img {
+    height: 9rem;
+  }
+  /* .pressure {
+    gap: 0ch;
+    justify-content: space-between; */
+  /* } */
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  main {
+    grid-template-rows: 4fr 3fr;
   }
 }

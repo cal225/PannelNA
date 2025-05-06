@@ -8,10 +8,18 @@
   margin: 0;
 }
 
-:root{
+:root {
   --small_font_size: 2rem;
   --base_font_size: 2.7rem;
   --sub_title_size: 4.3rem;
+}
+
+.capitalize{
+  text-transform: capitalize;
+}
+
+.lowercase{
+  text-transform: lowercase;
 }
 
 html,
@@ -28,6 +36,7 @@ body {
   gap: 10%;
   padding: 0.5rem;
 }
+
 header {
   display: flex;
   justify-content: center;
@@ -55,19 +64,66 @@ header {
 }
 
 @media screen and (max-width: 1900px) {
+  :root {
+    --small_font_size: 1.5rem;
+    --base_font_size: 2rem;
+    --sub_title_size: 2.5rem;
+  }
+
+  .timeNdate {
+    font-size: 3em;
+    gap: 10%;
+    padding: 0.5rem;
+  }
+}
+
+@media screen and (max-height: 1000px) {
   :root{
     --small_font_size: 1.5rem;
-    --base_font_size: 2.3rem;
+    --base_font_size: 2.1rem;
+    --sub_title_size: 3rem;
+  }
+}
+
+@media screen and (max-width: 1081px) {
+  :root {
+    --small_font_size: 1rem;
+    --base_font_size: 1.5rem;
+    --sub_title_size: 2.5rem;
+  }
+
+  .timeNdate {
+    font-size: 3em;
+    gap: 10%;
+    padding: 0.5rem;
+  }
+}
+
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  /* :root {
+    --small_font_size: 1.5rem;
+    --base_font_size: 2.1rem;
     --sub_title_size: 3rem;
   }
 
   .timeNdate {
-    font-family: poppins;
-    display: flex;
     font-size: 3em;
-    justify-content: space-between;
+    gap: 10%;
+    padding: 0.5rem;
+  } */
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  :root {
+    --small_font_size: 1.2rem;
+    --base_font_size: 1.7rem;
+    --sub_title_size: 2.5rem;
+  }
+
+  .timeNdate {
+    font-size: 3em;
     gap: 10%;
     padding: 0.5rem;
   }
-
 }

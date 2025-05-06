@@ -9,7 +9,7 @@
             <p>Q1027</p>
         </div>
         <div class="pressure">
-            zd : 1840 <span class="min">ft</span>
+            <span class="capitalize">zd : 1840</span> <span class="lowercase"> ft</span>
         </div>
     </div>
 </div>
