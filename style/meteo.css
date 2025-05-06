@@ -191,9 +191,7 @@ main {
 }
 
 .fog {
-  filter: invert(90%) sepia(67%) saturate(5546%) hue-rotate(179deg)
-    brightness(111%) contrast(104%);
-    padding-left: 1ch ;
+  padding-left: 1ch;
 }
 
 @media screen and (max-width: 1900px) {
