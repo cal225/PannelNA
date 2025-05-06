@@ -27,6 +27,10 @@ body {
   overflow: hidden;
 }
 
+.hiddden{
+  display: none;
+}
+
 .timeNdate {
   font-family: poppins;
   display: flex;

@@ -2,6 +2,7 @@
     <div class="METAR_top rose">
         <img src="../../assets/high-temperature-icon.svg" alt="">
         <p>20° / 18°</p> 
+        <img class="fog" src="../../assets/cloud-fog-icon.svg" alt="">
     </div>
     <div class="METAR_bottom">
         <div class="QNH">
