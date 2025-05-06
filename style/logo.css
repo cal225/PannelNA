@@ -15,7 +15,7 @@ body {
     color: #F0F8FF;
 }
 
-.MaJ {
+header, footer {
   display: none;
 }
 
@@ -42,3 +42,14 @@ main {
     height: 80vh;
   }
 }
+
+
+/*
+    <animateMotion
+      path="M0,0 q60,100 100,0 q60,-20 100,0"
+      begin="0s"
+      dur="10s"
+      repeatCount="indefinite" />
+
+
+*/
