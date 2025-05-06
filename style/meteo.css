@@ -109,17 +109,16 @@ main {
 }
 
 .METAR_bottom > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
   padding: 0 1rem;
 }
 
 .pressure {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1rem;
   text-transform: capitalize;
   border-left: 5px white solid;
-
 }
 
 .pressureIcon {
@@ -164,6 +163,13 @@ main {
   padding-bottom: 0px;
 }
 
+.previsiont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .previsiont > img {
   height: 8rem;
 }
@@ -173,4 +179,34 @@ main {
   flex-direction: column;
   justify-content: space-between;
   padding: 0em 2em 0 1em;
+}
+
+@media screen and (max-width: 1900px) {
+  .cards {
+    padding: 1rem;
+  }
+  .weatherUpdate {
+    padding-bottom: 0px;
+  }
+  .METAR_top > img {
+    height: 4.5rem;
+  }
+  .pressureIcon {
+    height: 4.5rem;
+  }
+  .previsiont > img {
+    height: 7rem;
+  }
+  .heureSol > img {
+    height: 8rem;
+  }
+  .piste {
+    height: 34rem;
+  }
+  .backPiste {
+    height: 45%;
+  }
+  .mancheAir {
+    height: 45%;
+  }
 }

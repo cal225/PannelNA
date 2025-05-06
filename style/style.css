@@ -10,8 +10,8 @@
 
 :root{
   --small_font_size: 2rem;
-  --base_font_size: 3.7rem;
-  --sub_title_size: 4.5rem;
+  --base_font_size: 2.7rem;
+  --sub_title_size: 4.3rem;
 }
 
 html,
@@ -22,7 +22,7 @@ body {
 .timeNdate {
   font-family: poppins;
   display: flex;
-  font-size: 5.5em;
+  font-size: 5rem;
   /* width: 700px; */
   justify-content: space-between;
   gap: 10%;
@@ -52,4 +52,22 @@ header {
   border: 1.5px #ededed40 solid;
   border-radius: 40px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 1900px) {
+  :root{
+    --small_font_size: 1.5rem;
+    --base_font_size: 2.3rem;
+    --sub_title_size: 3rem;
+  }
+
+  .timeNdate {
+    font-family: poppins;
+    display: flex;
+    font-size: 3em;
+    justify-content: space-between;
+    gap: 10%;
+    padding: 0.5rem;
+  }
+
 }
