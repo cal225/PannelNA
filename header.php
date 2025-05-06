@@ -1,5 +1,4 @@
 <?php
-$title = "meteo";
 echo "
 <!DOCTYPE html>
 <html lang='fr'>

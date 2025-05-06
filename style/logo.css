@@ -1,0 +1,44 @@
+html,
+body {
+  overflow: visible;
+}
+body {
+  background-image: url(/assets/ChatGPT\ Image\ Apr\ 24\,\ 2025\,\ 08_48_45\ AM.png);
+  background-position: center;
+  background-size: cover;
+  display: grid;
+  grid-template-rows: 1fr 8fr;
+  height: 100vh;
+}
+
+.timeNdate{
+    color: #F0F8FF;
+}
+
+.MaJ {
+  display: none;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+}
+
+.logo {
+  position: absolute;
+  height: 80vh;
+  animation: grow 4s ease-out;
+}
+
+@keyframes grow {
+  0% {
+    height: 40vh;
+  }
+  100% {
+    height: 80vh;
+  }
+}
