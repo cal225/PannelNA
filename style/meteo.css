@@ -1,9 +1,7 @@
 body {
-  background-image: url(/assets/ChatGPT\ Image\ Apr\ 24\,\ 2025\,\ 08_48_45\ AM.png);
-  background-position: center;
-  background-size: cover;
-  display: grid;
-  grid-template-rows: 1fr 8fr;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100vh;
 }
 * {
@@ -13,7 +11,9 @@ body {
 }
 main {
   display: grid;
-  grid-template-columns: 4.5fr 3fr;
+  grid-template-columns: 4fr 3fr;
+  gap: 3rem;
+  padding: 0 3rem;
 }
 
 .windContainer {
@@ -25,9 +25,6 @@ main {
 .mancheContainer {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
-}
-.leftContainer {
-  padding: 0em 1em 0 2em;
 }
 
 .mancheContainer {
@@ -187,7 +184,6 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0em 2em 0 1em;
 }
 
 .fog {

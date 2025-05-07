@@ -8,6 +8,13 @@
   margin: 0;
 }
 
+body {
+  background-image: url(/assets/ChatGPT\ Image\ Apr\ 24\,\ 2025\,\ 08_48_45\ AM.png);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
 :root {
   --small_font_size: 2rem;
   --base_font_size: 2.7rem;
@@ -35,10 +42,10 @@ body {
   font-family: poppins;
   display: flex;
   font-size: 5rem;
-  /* width: 700px; */
   justify-content: space-between;
   gap: 10%;
   padding: 0.5rem;
+  color: aliceblue;
 }
 
 header {
@@ -103,21 +110,6 @@ header {
   }
 }
 
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
-  /* :root {
-    --small_font_size: 1.5rem;
-    --base_font_size: 2.1rem;
-    --sub_title_size: 3rem;
-  }
-
-  .timeNdate {
-    font-size: 3em;
-    gap: 10%;
-    padding: 0.5rem;
-  } */
-}
-
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
   :root {
     --small_font_size: 1.2rem;
@@ -131,3 +123,9 @@ header {
     padding: 0.5rem;
   }
 }
+/** types of media
+@media screen and (max-width: 1900px)
+@media screen and (max-height: 1000px)
+@media screen and (max-width: 1081px)
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape)
+*/

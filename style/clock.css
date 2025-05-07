@@ -1,73 +1,119 @@
 html,
 body {
   overflow: visible;
+  font-family: poppins;
+  width: 100%;
+}
+header{
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+main {
+  height: 100%;
+  padding: 0 3rem;
 }
 
-main {
-  display: flex;
+.clocksWrapper {
+  display: grid;
+  grid-template-columns: 0.5fr 2fr 2fr 0.5fr;
+  justify-items: center;
   align-items: center;
-  justify-content: center;
-  background: #d9d7dd;
+  height: 100%;
+}
+
+.outline {
+  padding: 3rem;
+  padding-bottom: 1.5rem;
+  color: #f0f8ff;
+  font-size: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
 }
 
 .clock {
-  border-radius: 100%;
-  background: #fff url(/assets/clock.svg) no-repeat center;
-  background-size: 300px;
-  font-family: "Montserrat";
-  border: 5px solid white;
+  border-radius: 10%;
+  background-color: rgb(0, 0, 0, 0.75);
+  padding: 1rem;
   box-shadow: inset 2px 3px 8px 0 rgba(0, 0, 0, 0.1);
 }
 
 .wrap {
+  background: #fff url(/assets/clock.svg) no-repeat center;
+  background-size: 400px;
+  /* border: 5px solid black; */
   overflow: hidden;
   position: relative;
-  width: 350px;
-  height: 350px;
+  width: 430px;
+  height: 430px;
   border-radius: 100%;
 }
 
 .minute,
 .hour {
   position: absolute;
-  height: 100px;
+  height: 200px;
   width: 6px;
   margin: auto;
-  top: -27%;
+  top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  background: black;
-  transform-origin: bottom center;
   transform: rotate(0deg);
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
   z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.minuteHand,
+.hourHand {
+  border-radius: 600px;
+  position: inherit;
+  height: 115px;
+  width: 6px;
+  background: black;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
 }
 
 .minute {
-  position: absolute;
-  height: 130px;
+  height: 30px;
   width: 4px;
-  top: -38%;
-  left: 0;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
   transform: rotate(90deg);
+  align-items: flex-end;
+}
+
+.minuteHand {
+  position: inherit;
+  height: 160px;
+  width: 4px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.4);
 }
 
 .second {
   position: absolute;
-  height: 90px;
-  width: 2px;
+  height: 362px;
   margin: auto;
-  top: -26%;
+  top: 0;
   left: 0;
   bottom: 0;
   right: 0;
+  transform: rotate(180deg);
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.secondHand {
+  position: inherit;
+  height: 205px;
+  width: 2px;
   border-radius: 4px;
   background: #ff4b3e;
   transform-origin: bottom center;
-  transform: rotate(180deg);
-  z-index: 1;
 }
 
 .dot {
@@ -80,25 +126,28 @@ main {
   height: 12px;
   border-radius: 100px;
   background: white;
-  border: 2px solid #1b1b1b;
+  border: 2px solid red;
   border-radius: 100px;
   margin: auto;
   z-index: 1;
 }
 
-.clockDate {
+.logo {
   position: absolute;
-  top: 242px;
-  left: 50%;
-  margin-left: -18px;
-  width: 36px;
-  height: 30px;
-  background: #83837a;
-  border-radius: 6px;
-  font-family: 'Fjalla One', sans-serif;
-  font-size: 21px;
-  line-height: 30px;
-  color: white;
-  text-align: center;
-  box-shadow: inset 0 2px 2px 0 rgba(0,0,0,.3), inset 0 -2px 2px 0 rgba(255,255,255,.2);
+  top: -25%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 200px;
+  margin: auto;
 }
+
+footer {
+  display: none;
+}
+@media screen and (max-width: 1900px){
+    
+}
+@media screen and (max-height: 1000px){}
+@media screen and (max-width: 1081px){}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape){}
