@@ -4,7 +4,7 @@ header("Pragma: no-cache");
 header("Expires: 0");
 
 // List of pages inside the "pages" folder
-$pages = ['logo.php', 'meteo.php', 'METAR.php', 'flightD.php', 'flightA.php'];
+$pages = ['logo.php', 'meteo.php', 'clock.php', 'METAR.php', 'flightD.php', 'flightA.php'];
 // Get 'page' from URL, default to 0 if not set or invalid
 $pageIndex = isset($_GET['page']) ? (int)$_GET['page'] : 0;
 

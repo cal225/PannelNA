@@ -192,6 +192,7 @@ main {
 
 .fog {
   padding-left: 1ch;
+  width: 14%;
 }
 
 @media screen and (max-width: 1900px) {
@@ -221,6 +222,10 @@ main {
   }
   .mancheAir {
     height: 45%;
+  }
+  .fog {
+    padding-left: 1ch;
+    width: 15%;
   }
 }
 @media screen and (max-height: 1000px) {

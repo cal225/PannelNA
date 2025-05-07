@@ -22,13 +22,9 @@ echo "
     <header>
 
         <h1 class="timeNdate">
-            <span class='date'>
-                <?= date("d/m/Y") ?>
-            </span>
+            <span class='date' id="utc-date"></span>
             <span class="UTCWrapper">
-                <span class='utc-time' id="utc-time">
-                    <?= (new DateTime("now", new DateTimeZone("UTC")))->format("H : i : s") ?>
-                </span>
+                <span class='utc-time' id="utc-time"></span>
                 <span>UTC</span>
             </span>
         </h1>
