@@ -19,6 +19,7 @@ body {
   --small_font_size: 2rem;
   --base_font_size: 2.7rem;
   --sub_title_size: 4.3rem;
+  --title-size:5rem;
 }
 
 .capitalize{
@@ -41,7 +42,7 @@ body {
 .timeNdate {
   font-family: poppins;
   display: flex;
-  font-size: 5rem;
+  font-size: var(--title-size);
   justify-content: space-between;
   gap: 10%;
   padding: 0.5rem;

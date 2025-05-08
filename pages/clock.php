@@ -5,7 +5,7 @@ include 'header.php';
 ?>
 <main>
     <div class="clocksWrapper">
-        <div></div>
+        <div class="space"></div>
         <div class="outline frosted">
             <div class="clock">
                 <div class="wrap">
@@ -30,9 +30,10 @@ include 'header.php';
             </div>
             <span class="clockType">UTC</span>
         </div>
-        <div></div>
+        <div class="space"></div>
     </div>
 </main>
 <?php
 include 'footer.php';
+echo "<script src='../script/clock.js'></script>";
 ?>

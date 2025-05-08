@@ -4,14 +4,17 @@ body {
   font-family: poppins;
   width: 100%;
 }
-header{
-    position: absolute;
-    left: 0;
-    right: 0;
+header {
+  position: absolute;
+  left: 0;
+  right: 0;
 }
 main {
   height: 100%;
   padding: 0 3rem;
+}
+.UTCWrapper {
+  display: none;
 }
 
 .clocksWrapper {
@@ -26,11 +29,14 @@ main {
   padding: 3rem;
   padding-bottom: 1.5rem;
   color: #f0f8ff;
-  font-size: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
+}
+
+.clockType {
+  font-size: var(--sub_title_size);
 }
 
 .clock {
@@ -46,7 +52,7 @@ main {
   /* border: 5px solid black; */
   overflow: hidden;
   position: relative;
-  width: 430px;
+  aspect-ratio: 1/1;
   height: 430px;
   border-radius: 100%;
 }
@@ -145,9 +151,40 @@ main {
 footer {
   display: none;
 }
-@media screen and (max-width: 1900px){
-    
+@media screen and (max-width: 1900px) {
+  .space {
+    display: none;
+  }
+  .clocksWrapper {
+    grid-template-columns: 2fr 2fr;
+  }
+  .wrap {
+    background-size: 350px;
+    height: 380px;
+  }
+  .dot {
+    width: 9px;
+    height: 9px;
+  }
+  .second {
+    height: 315px;
+  }
+  .secondHand {
+    height: 180px;
+  }
+  .minuteHand {
+    height: 160px;
+  }
+  .hour{
+    height: 160px;
+  }
+  .hourHand{
+    height: 100px;
+  }
 }
-@media screen and (max-height: 1000px){}
-@media screen and (max-width: 1081px){}
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape){}
+@media screen and (max-height: 1000px) {
+}
+@media screen and (max-width: 1081px) {
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+}

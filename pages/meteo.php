@@ -13,4 +13,5 @@ include 'header.php';
 </main>
 <?php
 include 'footer.php';
+echo "<script src='../pages_back/meteo.js'></script>";
 ?>
