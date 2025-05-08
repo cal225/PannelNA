@@ -181,6 +181,11 @@ footer {
   .hourHand{
     height: 100px;
   }
+  .outline{
+    padding: 2rem;
+    padding-bottom: 1rem;
+    gap: 0.5rem;
+  }
 }
 @media screen and (max-height: 1000px) {
 }
