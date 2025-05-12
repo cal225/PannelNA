@@ -3,9 +3,17 @@
   src: url(Poppins/Poppins-Bold.ttf);
   font-weight: bold;
 }
+
+@font-face {
+  font-family: poppins;
+  src: url(Poppins/Poppins-Regular.ttf);
+  font-weight: light;
+}
 * {
   padding: 0;
   margin: 0;
+  font-family: poppins;
+  color: aliceblue;
 }
 
 body {
@@ -19,14 +27,18 @@ body {
   --small_font_size: 2rem;
   --base_font_size: 2.7rem;
   --sub_title_size: 4.3rem;
-  --title-size:5rem;
+  --title-size: 5rem;
 }
 
-.capitalize{
+.logoHeader {
+  display: none;
+}
+
+.capitalize {
   text-transform: capitalize;
 }
 
-.lowercase{
+.lowercase {
   text-transform: lowercase;
 }
 
@@ -35,7 +47,7 @@ body {
   overflow: hidden;
 }
 
-.hiddden{
+.hiddden {
   display: none;
 }
 
@@ -46,7 +58,6 @@ body {
   justify-content: space-between;
   gap: 10%;
   padding: 0.5rem;
-  color: aliceblue;
 }
 
 header {
@@ -80,20 +91,21 @@ header {
     --small_font_size: 1.5rem;
     --base_font_size: 2rem;
     --sub_title_size: 2.5rem;
+    --title-size: 3rem;
   }
 
   .timeNdate {
-    font-size: 3em;
     gap: 10%;
     padding: 0.5rem;
   }
 }
 
 @media screen and (max-height: 1000px) {
-  :root{
+  :root {
     --small_font_size: 1.5rem;
     --base_font_size: 2.1rem;
     --sub_title_size: 3rem;
+    --title-size: 3.5rem;
   }
 }
 
@@ -102,10 +114,10 @@ header {
     --small_font_size: 1rem;
     --base_font_size: 1.5rem;
     --sub_title_size: 2.5rem;
+    --title-size: 3rem;
   }
 
   .timeNdate {
-    font-size: 3em;
     gap: 10%;
     padding: 0.5rem;
   }
@@ -116,10 +128,10 @@ header {
     --small_font_size: 1.2rem;
     --base_font_size: 1.7rem;
     --sub_title_size: 2.5rem;
+    --title-size: 3rem;
   }
 
   .timeNdate {
-    font-size: 3em;
     gap: 10%;
     padding: 0.5rem;
   }
