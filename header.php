@@ -21,13 +21,13 @@ echo "
         echo "
         <span class='logoHeader'>
             <img src='./assets/logo_nextAviation.svg' alt=''>
-            <p>PROCHAIN VOLS</p>
+            <p>PROCHAINS VOLS</p>
         </span>";
     } elseif ($title === 'flight-2') {
         echo "
         <span class='logoHeader'>
             <img src='./assets/logo_nextAviation-white.svg' alt=''>
-            <p>PROCHAIN VOLS</p>
+            <p>PROCHAINS VOLS</p>
         </span>";
     }
 

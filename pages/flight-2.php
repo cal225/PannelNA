@@ -10,7 +10,7 @@ include 'header.php';
                 <th class="tbHeader ">ETD</th>
                 <th class="tbHeader ">DEST</th>
                 <th class="tbHeader ">ÉQUIPAGE</th>
-                <th class="tbHeader ">PLANE</th>
+                <th class="tbHeader ">AÉRONEF</th>
                 <th class="tbHeader ">VOL</th>
             </thead>
             <tr class="tbRow">

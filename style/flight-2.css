@@ -37,10 +37,13 @@ header {
   height: calc(var(--title-size) + 4rem);
   flex-direction: row;
   align-items: flex-end;
+  justify-content: space-between;
   gap: 2rem;
+  width: 100%;
 }
+
 .logoHeader p {
-  color: black;
+  color: white;
   font-size: calc(var(--title-size) - 0.5rem);
 }
 
