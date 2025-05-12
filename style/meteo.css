@@ -123,10 +123,6 @@ main {
   height: 80%;
 }
 
-.min {
-  text-transform: lowercase;
-}
-
 .QNH {
   justify-content: space-evenly;
 }

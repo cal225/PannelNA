@@ -1,6 +1,6 @@
 <div class="windContainer frosted">
     <div class="metarWind">
-        <p>040 / 12G25</p> 
+        <p>ERROR</p> 
     </div>
     <div class="mancheContainer">
         <div class="wind02">
