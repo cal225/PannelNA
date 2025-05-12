@@ -9,8 +9,10 @@ $pages = [
     'meteo.php',
     'clock.php',
     ['flight-1.php', 'flight-2.php'],
-    'METAR.php'
+    'METAR.php',
+    'metar-proxy.php', // add this
 ];
+
 
 // Get page param as string, e.g., "3.1"
 $pageParam = isset($_GET['page']) ? $_GET['page'] : '0';
@@ -37,4 +39,3 @@ if (is_array($selectedPage)) {
 
 // Include selected page
 include 'pages/' . $selectedPage;
-?>
