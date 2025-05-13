@@ -34,7 +34,9 @@ main {
 }
 
 .infoWrapper div {
-    padding: 2rem;
+  padding: 2rem;
+  height: calc(var(--title-size) + 9rem);
+  width: calc(var(--title-size) + 9rem);
   aspect-ratio: 1/1;
   border-radius: 100%;
   display: flex;

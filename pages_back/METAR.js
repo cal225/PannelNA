@@ -1,20 +1,53 @@
-async function getWeather(icaoCode) {
-  const url = `https://avwx.rest/api/metar/${icaoCode}`;
-  const response = await fetch(url, {
-    headers: {
-      'Authorization': 'Bearer rDahirOQPf9u5UajlxNP7GbD_rJDSEjbFTNRRfe2CMo',
-      'Accept': 'application/json'
+async function fetchAviationData(icaoCode, metarToken) {
+  const metarUrl = `https://avwx.rest/api/metar/${icaoCode}`;
+  const tafUrl = `https://avwx.rest/api/taf/${icaoCode}`;
+  const wrapper = document.querySelector(`.codeWrapper[data-icao="${icaoCode}"]`);
+
+  if (!wrapper) return;
+
+  const metarP = wrapper.querySelector(".MetarCode");
+  const tafP = wrapper.querySelector(".TafCode");
+
+  try {
+    const [metarRes, tafRes] = await Promise.all([
+      fetch(metarUrl, {
+        headers: {
+          Authorization: metarToken,
+          Accept: "application/json"
+        }
+      }),
+      fetch(tafUrl, {
+        headers: {
+          Authorization: metarToken,
+          Accept: "application/json"
+        }
+      })
+    ]);
+
+    // METAR
+    if (metarRes.ok) {
+      const metarData = await metarRes.json();
+      metarP.textContent = metarData.raw || "No METAR available";
+    } else {
+      metarP.textContent = "Error fetching METAR";
     }
-  });
 
-  if (!response.ok) {
-    console.error(`Error fetching METAR for ${icaoCode}:`, response.statusText);
-    return;
+    // TAF
+    if (tafRes.ok) {
+      const tafData = await tafRes.json();
+      tafP.textContent = tafData.raw || "No TAF available";
+    } else {
+      tafP.textContent = "No TAF data";
+    }
+  } catch (err) {
+    console.error(`Failed to fetch data for ${icaoCode}:`, err);
+    metarP.textContent = "Error loading METAR";
+    tafP.textContent = "Error loading TAF";
   }
-
-  const data = await response.json();
-  console.log(data); // You can now use this in your UI
 }
 
-getWeather("LFGJ");
-getWeather("LSGC");
+// Get token from PHP
+// const METAR = "<?= getenv('METAR') ?>";
+
+// Airports
+["LFGJ", "LSGC"].forEach(code => fetchAviationData(code, METAR));
