@@ -1,11 +1,17 @@
 <?php
 $title = "meteo"; 
+include 'header.php';
+
 ?>
 <main>
-    <div class="leftContainer">
+    <section class="leftContainer">
         <?php include 'meteo/meteoleft.php'; ?>
-    </div>
-    <div class="rightContainer">
+    </section>
+    <section class="rightContainer">
         <?php include 'meteo/meteoright.php'; ?> 
-    </div>
+    </section>
 </main>
+<?php
+include 'footer.php';
+echo "<script src='../pages_back/meteo.js'></script>";
+?>

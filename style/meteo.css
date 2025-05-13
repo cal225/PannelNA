@@ -1,9 +1,7 @@
 body {
-  background-image: url(/assets/ChatGPT\ Image\ Apr\ 24\,\ 2025\,\ 08_48_45\ AM.png);
-  background-position: center;
-  background-size: cover;
-  display: grid;
-  grid-template-rows: 0.5fr 9fr;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100vh;
 }
 * {
@@ -13,7 +11,9 @@ body {
 }
 main {
   display: grid;
-  grid-template-columns: 4.5fr 3fr;
+  grid-template-columns: 4fr 3fr;
+  gap: 3rem;
+  padding: 0 3rem;
 }
 
 .windContainer {
@@ -26,9 +26,6 @@ main {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
 }
-.leftContainer {
-  padding: 0em 1em 0 2em;
-}
 
 .mancheContainer {
   padding: 0 5%;
@@ -40,13 +37,14 @@ main {
 }
 
 .metarWind {
-  font-size: 4rem;
+  font-size: var(--sub_title_size);
   display: flex;
   justify-content: center;
 }
 
 .backPiste {
   height: 50%;
+  width: auto;
   aspect-ratio: 1/1;
   border-radius: 100%;
   z-index: -1;
@@ -85,7 +83,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 2rem;
   text-transform: uppercase;
 }
 
@@ -96,29 +94,44 @@ main {
   grid-template-columns: 1fr;
 }
 
-.METAR_top {
+.METAR > div {
+  padding: 1rem;
   display: flex;
+  align-items: center;
   justify-content: center;
+}
+
+.METAR_bottom {
+  border-top: 5px white solid;
+}
+
+.METAR_bottom > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.pressure {
+  border-left: 5px white solid;
+  gap: 0.5ch;
   align-items: center;
 }
 
-.Metar_separator{
-  width: 5px;
-  height: 100%;
-  background-color: white;
-  transform: rotate(90deg);
+.pressureIcon {
+  height: 80%;
 }
 
-.METAR_bottom{
- display: flex;
- justify-content: space-evenly;
- align-items: center;
+.QNH {
+  justify-content: space-evenly;
 }
 
-.METAR_bottom_separator{
+.METAR_separator {
+  align-self: stretch;
   width: 5px;
+  border-right: 5px white solid;
   height: 90px;
-  background-color: white;
 }
 
 .heureAero {
@@ -152,6 +165,13 @@ main {
   padding-bottom: 0px;
 }
 
+.previsiont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .previsiont > img {
   height: 8rem;
 }
@@ -160,5 +180,137 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0em 2em 0 1em;
+}
+
+.fog {
+  padding-left: 1ch;
+  width: 14%;
+}
+
+@media screen and (max-width: 1900px) {
+  .cards {
+    padding: 0.5rem;
+  }
+  .weatherUpdate {
+    padding-bottom: 0px;
+  }
+  .METAR_top > img {
+    height: 4.5rem;
+  }
+  .pressureIcon {
+    height: 4.5rem;
+  }
+  .previsiont > img {
+    height: 7rem;
+  }
+  .heureSol > img {
+    height: 8rem;
+  }
+  .piste {
+    height: 30rem;
+  }
+  .backPiste {
+    height: 45%;
+  }
+  .mancheAir {
+    height: 45%;
+  }
+  .fog {
+    padding-left: 1ch;
+    width: 15%;
+  }
+}
+@media screen and (max-height: 1000px) {
+  .windContainer {
+    height: 100%;
+  }
+
+  .heureSol > img {
+    height: 8rem;
+  }
+  .previsiont > img {
+    height: 7rem;
+  }
+
+  .timeNdate {
+    font-size: 3.5rem;
+  }
+}
+@media screen and (max-width: 1081px) {
+  .cards {
+    padding: 0.2rem;
+  }
+  .METAR_top > img {
+    height: 4rem;
+  }
+  .pressureIcon {
+    height: 4rem;
+  }
+  .previsiont > img {
+    height: 6rem;
+  }
+  .heureSol > img {
+    height: 6rem;
+  }
+  .piste {
+    height: 30rem;
+  }
+  .backPiste {
+    height: 40%;
+  }
+  .mancheAir {
+    height: 40%;
+  }
+  .heureSol > img {
+    height: 8rem;
+  }
+  .wind020 > img,
+  .wind02 > img {
+    height: 9rem;
+  }
+}
+
+@media only screen and (min-device-width: 700px) and (max-device-width: 1024px) and (orientation: landscape) {
+  main {
+    display: grid;
+    grid-template-columns: 4.2fr 3.1fr;
+  }
+  .cards {
+    padding: 0.2rem;
+  }
+  .METAR_top > img {
+    height: 4rem;
+  }
+  .pressureIcon {
+    height: 4rem;
+  }
+  .previsiont > img {
+    height: 6rem;
+  }
+  .piste {
+    height: 30rem;
+  }
+  .backPiste {
+    height: 40%;
+  }
+  .mancheAir {
+    height: 40%;
+  }
+  .heureSol > img {
+    height: 6rem;
+  }
+  .wind020 > img,
+  .wind02 > img {
+    height: 9rem;
+  }
+  /* .pressure {
+    gap: 0ch;
+    justify-content: space-between; */
+  /* } */
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  main {
+    grid-template-rows: 4fr 3fr;
+  }
 }

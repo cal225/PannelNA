@@ -1,10 +1,10 @@
 <div class="windContainer frosted">
     <div class="metarWind">
-        <p>040 / 12G25</p>
+        <p>ERROR</p> 
     </div>
     <div class="mancheContainer">
         <div class="wind02">
-            <img src="../../assets/RWY 02.svg" alt="">
+            <img class="hiddden" src="../../assets/RWY 02.svg" alt="">
         </div>
         <div class="windCenter">
             <div class="frosted backPiste"></div>

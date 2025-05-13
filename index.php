@@ -1,27 +1,41 @@
 <?php
+header("Cache-Control: no-cache, no-store, must-revalidate");
+header("Pragma: no-cache");
+header("Expires: 0");
+
 // List of pages inside the "pages" folder
-$pages = ['METAR.php', 'meteo.php', 'flightD.php', 'flightA.php'];
+$pages = [
+    'logo.php',
+    'meteo.php',
+    'clock.php',
+    ['flight/flight-1.php', 'flight/flight-2.php'],
+    ['METAR/METAR-1.php', 'METAR/METAR-2.php'],
+    'metar-proxy.php',
+];
 
-// Get current page index from query string (default to 0)
-$currentIndex = isset($_GET['page']) ? (int)$_GET['page'] : 0;
 
-// Safety check: if index is out of bounds
-if ($currentIndex < 0 || $currentIndex >= count($pages)) {
-    $currentIndex = 0;
+// Get page param as string, e.g., "3.1"
+$pageParam = isset($_GET['page']) ? $_GET['page'] : '0';
+$parts = explode('.', $pageParam);
+
+$mainIndex = isset($parts[0]) && is_numeric($parts[0]) ? (int)$parts[0] : 0;
+$subIndex = isset($parts[1]) && is_numeric($parts[1]) ? (int)$parts[1] : 0;
+
+// Validate main index
+if ($mainIndex < 0 || $mainIndex >= count($pages)) {
+    $mainIndex = 0;
 }
 
-// Calculate next page index
-$nextIndex = ($currentIndex + 1) % count($pages);
+// Select page
+$selectedPage = $pages[$mainIndex];
 
-// Set meta refresh to auto-rotate
-// echo '<meta http-equiv="refresh" content="5;url=?page=' . $nextIndex . '">';
+if (is_array($selectedPage)) {
+    // Validate sub index
+    if ($subIndex < 0 || $subIndex >= count($selectedPage)) {
+        $subIndex = 0;
+    }
+    $selectedPage = $selectedPage[$subIndex];
+}
 
-// Set up path to the current page
-$currentPage = 'pages/' . $pages[$currentIndex];
-
-
-// Include common layout
-include 'header.php';
-// include $currentPage;
-include 'pages/meteo.php';
-include 'footer.php';
+// Include selected page
+include 'pages/' . $selectedPage;

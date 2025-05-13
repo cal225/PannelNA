@@ -1,16 +1,16 @@
 <div class="frosted cards METAR">
     <div class="METAR_top rose">
-        <p>20° / 18°</p> <img src="../../assets/high-temperature-icon 1.svg" alt="">
+        <img src="../../assets/high-temperature-icon.svg" alt="">
+        <p>ERROR</p>
+        <img class="fog" src="../../assets/cloud-fog-icon.svg" alt="">
     </div>
-    <hr class="Metar_separator">
     <div class="METAR_bottom">
         <div class="QNH">
-            <p>Q1027</p>
+            <img class="pressureIcon" src="../../assets/small heavy pressure icon.svg" alt="">
+            <p>ERROR</p>
         </div>
-        <hr class="METAR_bottom_separator">
         <div class="pressure">
-            test
-            <img class="pressureIcon" src="../../assets/small pressure icon.svg" alt="">
+            <p>ERROR</p>
         </div>
     </div>
 </div>
