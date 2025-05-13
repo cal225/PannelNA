@@ -30,13 +30,13 @@ main {
 }
 
 .infoWrapper img {
-  height: calc(var(--title-size) + 2rem);
+  height: calc(var(--title-size) + 1.7rem);
 }
 
 .infoWrapper div {
   padding: 2rem;
-  height: calc(var(--title-size) + 9rem);
-  width: calc(var(--title-size) + 9rem);
+  height: calc(var(--title-size) + 7.7rem);
+  width: calc(var(--title-size) + 7.7rem);
   aspect-ratio: 1/1;
   border-radius: 100%;
   display: flex;
@@ -80,7 +80,7 @@ main {
     grid-template-columns: 1.5fr 1fr 6fr;
   }
   .infoWrapper img {
-    height: calc(var(--title-size) + 2.5rem);
+    height: calc(var(--title-size) + 2rem);
   }
   .PisteCode {
     font-size: calc(var(--sub_title_size) - 0.5rem);
