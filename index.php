@@ -8,8 +8,8 @@ $pages = [
     'logo.php',
     'meteo.php',
     'clock.php',
-    ['flight-1.php', 'flight-2.php'],
-    'METAR.php',
+    ['flight/flight-1.php', 'flight/flight-2.php'],
+    ['METAR/METAR-1.php', 'METAR/METAR-2.php'],
     'metar-proxy.php', // add this
 ];
 
