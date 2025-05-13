@@ -1,5 +1,5 @@
 let lastRequestTime = 0;
-const debounceTime = 1000; // 1 second delay between requests
+const debounceTime = 5 * 60 * 1000; // 5 minutes
 
 document.addEventListener("DOMContentLoaded", () => {
   const windDisplay = document.querySelector(".metarWind p");

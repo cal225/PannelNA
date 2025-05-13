@@ -9,7 +9,7 @@ include 'header.php';
             <p class="PisteCode">
                 LFGJ
             </p>
-            <div class="frosted">
+            <div class="crop">
                 <img src="../assets/france.svg.png" alt="">
             </div>
             <p class="alt">Alt : <span id="alt">620</span> ft</p>
@@ -28,7 +28,7 @@ include 'header.php';
             <p class="PisteCode">
                 LSGC
             </p>
-            <div class="frosted">
+            <div class="crop">
                 <img src="../assets/swiss.svg.png" alt="">
             </div>
             <p class="alt">Alt : <span id="alt">300</span> ft</p>

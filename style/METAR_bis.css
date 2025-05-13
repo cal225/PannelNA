@@ -30,18 +30,22 @@ main {
 }
 
 .infoWrapper img {
-  height: calc(var(--title-size) + 1.7rem);
+  height: calc(var(--title-size) + 4rem);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.infoWrapper div {
-  padding: 2rem;
-  height: calc(var(--title-size) + 7.7rem);
-  width: calc(var(--title-size) + 7.7rem);
-  aspect-ratio: 1/1;
+.crop {
+  height: calc(var(--title-size) + 4rem);
+  aspect-ratio: 1 / 1;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
   border-radius: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border: solid 2px black;
+  box-shadow: 5px 5px #0000002b;
 }
 
 .PisteCode {
@@ -80,6 +84,10 @@ main {
     grid-template-columns: 1.5fr 1fr 6fr;
   }
   .infoWrapper img {
+    height: calc(var(--title-size) + 2rem);
+  }
+
+  .crop {
     height: calc(var(--title-size) + 2rem);
   }
   .PisteCode {
