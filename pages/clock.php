@@ -33,7 +33,7 @@ include 'header.php';
         <div class="space"></div>
     </div>
 </main>
+<script src='../pages_back/clock.js'></script>;
 <?php
 include 'footer.php';
-echo "<script src='../script/clock.js'></script>";
 ?>

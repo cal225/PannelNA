@@ -15,27 +15,15 @@
     </div>
 </div>
 <div class="frosted cards heureAero">
-    <div class="heureSol">
+    <div class="heureSol ">
         <img src="../../assets/leverSol.svg" alt="lever du soleil">
-        <p>04:21 <span>UTC</span></p>
+        <p class="dawn"></p>
     </div>
     <p class="lfsp">lfsp</p>
     <div class="heureSol">
         <img src="../../assets/coucherSol.svg" alt="coucher du solei">
-        <p>18:44 <span>UTC</span></p>
+        <p class="dusk"></p>
     </div>
 </div>
-<div class="frosted cards weatherUpdate">
-    <div class="previsiont">
-        <p>16:00 <span>UTC</span></p>
-        <img src="../../assets/cloudy-1-day.svg" alt="">
-    </div>
-    <div class="previsiont">
-        <p>17:00 <span>UTC</span></p>
-        <img src="../../assets/cloudy-1-day.svg" alt="">
-    </div>
-    <div class="previsiont">
-        <p>18:00 <span>UTC</span></p>
-        <img src="../../assets/cloudy-1-day.svg" alt="">
-    </div>
+<div class="frosted cards weatherUpdate" id="weather-forecast">
 </div>
