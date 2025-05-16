@@ -25,11 +25,28 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0.5rem 0;
 }
 
 .infoWrapper img {
   height: calc(var(--title-size) + 4rem);
+  aspect-ratio: 1/1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.crop {
+  height: calc(var(--title-size) + 4rem);
+  aspect-ratio: 1 / 1;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 100%;
+  border: solid 2px black;
+  box-shadow: 5px 5px #0000002b;
 }
 
 .PisteCode {
@@ -42,9 +59,6 @@ main {
 
 .titleWraper {
   font-size: calc(var(--base_font_size) - 0.2rem);
-}
-.titleWraper p{
-  font-weight: 100;
 }
 
 .codeWrapper,
@@ -63,6 +77,10 @@ main {
   font-size: calc(var(--base_font_size) - 0.5rem);
 }
 
+.MetarCode{
+  font-weight: 500;
+}
+
 @media screen and (max-width: 1900px) {
 }
 @media screen and (max-height: 1000px) {
@@ -71,7 +89,11 @@ main {
     grid-template-columns: 1.5fr 1fr 6fr;
   }
   .infoWrapper img {
-    height: calc(var(--title-size) + 2.5rem);
+    height: calc(var(--title-size) + 2rem);
+  }
+
+  .crop {
+    height: calc(var(--title-size) + 2rem);
   }
   .PisteCode {
     font-size: calc(var(--sub_title_size) - 0.5rem);

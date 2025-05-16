@@ -9,6 +9,12 @@
   src: url(Poppins/Poppins-Regular.ttf);
   font-weight: light;
 }
+
+@font-face {
+  font-family: poppins;
+  src: url(Poppins/Poppins-SemiBold.ttf);
+  font-weight: 500;
+}
 * {
   padding: 0;
   margin: 0;

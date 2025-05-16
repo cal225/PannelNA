@@ -16,6 +16,9 @@ include 'header.php';
                     <img class="logo" src="../assets/logo_nextAviation4 2.svg" alt="">
                 </div>
             </div>
+            <span class="clockType">LT</span>
+        </div>
+        <div class="LSFP">
             <span class="clockType">LSFP</span>
         </div>
         <div class="outline frosted">

@@ -14,9 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Get H-1, H, H+1
       const displayHours = [
-        hours.find((h) => new Date(h.time).getUTCHours() === currentUTC - 1),
         hours.find((h) => new Date(h.time).getUTCHours() === currentUTC),
-        hours.find((h) => new Date(h.time).getUTCHours() === currentUTC + 1),
+        hours.find((h) => new Date(h.time).getUTCHours() === currentUTC + 2),
+        hours.find((h) => new Date(h.time).getUTCHours() === currentUTC + 4),
       ];
 
       container.innerHTML = ""; // Clear previous content

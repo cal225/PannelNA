@@ -1,5 +1,5 @@
 <?php
-$title = 'flight-2';
+$title = 'flight';
 include 'header.php';
 ?>
 
@@ -12,118 +12,138 @@ include 'header.php';
                 <th class="tbHeader ">ÉQUIPAGE</th>
                 <th class="tbHeader ">AÉRONEF</th>
                 <th class="tbHeader ">VOL</th>
+                <th class="tbHeader">Disponibilité</th>
             </thead>
             <tr class="tbRow">
-                <td class="tbCell ETD">--:--</td>
-                <td class="tbCell DEST">LSFP</td>
-                <td class="tbCell EQUIPAGE">ISN ------</td>
+                <td class="tbCell ETD"> JJ MMM --:--</td>
+                <td class="tbCell DEST">LOCAL</td>
+                <td class="tbCell EQUIPAGE">nom.P ISN</td>
                 <td class="tbCell PLANE">N3316C</td>
                 <td class="tbCell VOL">CODE LEÇON</td>
+                <td class="tbCell DISPO">X</td>
             </tr>
             <tr class="tbRow">
-                <td class="tbCell ETD">--:--</td>
+                <td class="tbCell ETD"> JJ MMM --:--</td>
                 <td class="tbCell DEST">LFGJ</td>
-                <td class="tbCell EQUIPAGE">------</td>
+                <td class="tbCell EQUIPAGE">nom.P</td>
                 <td class="tbCell PLANE">PLANE</td>
                 <td class="tbCell VOL">PRIVE</td>
+                <td class="tbCell DISPO"> 
+                    <img src="../assets/Seat.svg" alt="">
+                    <p>1/4</p>
+                </td>
             </tr>
             <tr class="tbRow">
-                <td class="tbCell ETD">--:--</td>
-                <td class="tbCell DEST">LSFP</td>
-                <td class="tbCell EQUIPAGE">ISN ------</td>
+                <td class="tbCell ETD"> JJ MMM --:--</td>
+                <td class="tbCell DEST">LOCAL</td>
+                <td class="tbCell EQUIPAGE">nom.P ISN</td>
                 <td class="tbCell PLANE">N3316C</td>
                 <td class="tbCell VOL">CODE LEÇON</td>
+                <td class="tbCell DISPO">X</td>
             </tr>
             <tr class="tbRow">
-                <td class="tbCell ETD">--:--</td>
+                <td class="tbCell ETD"> JJ MMM --:--</td>
                 <td class="tbCell DEST">LFGJ</td>
-                <td class="tbCell EQUIPAGE">------</td>
+                <td class="tbCell EQUIPAGE">nom.P</td>
                 <td class="tbCell PLANE">PLANE</td>
                 <td class="tbCell VOL">PRIVE</td>
+                <td class="tbCell DISPO">X</td>
             </tr>
             <tr class="tbRow">
-                <td class="tbCell ETD">--:--</td>
-                <td class="tbCell DEST">LSFP</td>
-                <td class="tbCell EQUIPAGE">ISN ------</td>
+                <td class="tbCell ETD"> JJ MMM --:--</td>
+                <td class="tbCell DEST">LOCAL</td>
+                <td class="tbCell EQUIPAGE">nom.P ISN</td>
                 <td class="tbCell PLANE">N3316C</td>
                 <td class="tbCell VOL">CODE LEÇON</td>
+                <td class="tbCell DISPO">X</td>
             </tr>
             <tr class="tbRow">
-                <td class="tbCell ETD">--:--</td>
+                <td class="tbCell ETD"> JJ MMM --:--</td>
                 <td class="tbCell DEST">LFGJ</td>
-                <td class="tbCell EQUIPAGE">------</td>
+                <td class="tbCell EQUIPAGE">nom.P</td>
                 <td class="tbCell PLANE">PLANE</td>
                 <td class="tbCell VOL">PRIVE</td>
+                <td class="tbCell DISPO">X</td>
             </tr>
             <tr class="tbRow">
-                <td class="tbCell ETD">--:--</td>
-                <td class="tbCell DEST">LSFP</td>
-                <td class="tbCell EQUIPAGE">ISN ------</td>
+                <td class="tbCell ETD"> JJ MMM --:--</td>
+                <td class="tbCell DEST">LOCAL</td>
+                <td class="tbCell EQUIPAGE">nom.P ISN</td>
                 <td class="tbCell PLANE">N3316C</td>
                 <td class="tbCell VOL">CODE LEÇON</td>
+                <td class="tbCell DISPO">X</td>
             </tr>
             <tr class="tbRow">
-                <td class="tbCell ETD">--:--</td>
+                <td class="tbCell ETD"> JJ MMM --:--</td>
                 <td class="tbCell DEST">LFGJ</td>
-                <td class="tbCell EQUIPAGE">------</td>
+                <td class="tbCell EQUIPAGE">nom.P</td>
                 <td class="tbCell PLANE">PLANE</td>
                 <td class="tbCell VOL">PRIVE</td>
+                <td class="tbCell DISPO">X</td>
             </tr>
             <tr class="tbRow">
-                <td class="tbCell ETD">--:--</td>
-                <td class="tbCell DEST">LSFP</td>
-                <td class="tbCell EQUIPAGE">ISN ------</td>
+                <td class="tbCell ETD"> JJ MMM --:--</td>
+                <td class="tbCell DEST">LOCAL</td>
+                <td class="tbCell EQUIPAGE">nom.P ISN</td>
                 <td class="tbCell PLANE">N3316C</td>
                 <td class="tbCell VOL">CODE LEÇON</td>
+                <td class="tbCell DISPO">X</td>
             </tr>
             <tr class="tbRow">
-                <td class="tbCell ETD">--:--</td>
+                <td class="tbCell ETD"> JJ MMM --:--</td>
                 <td class="tbCell DEST">LFGJ</td>
-                <td class="tbCell EQUIPAGE">------</td>
+                <td class="tbCell EQUIPAGE">nom.P</td>
                 <td class="tbCell PLANE">PLANE</td>
                 <td class="tbCell VOL">PRIVE</td>
+                <td class="tbCell DISPO">X</td>
             </tr>
             <tr class="tbRow">
-                <td class="tbCell ETD">--:--</td>
-                <td class="tbCell DEST">LSFP</td>
-                <td class="tbCell EQUIPAGE">ISN ------</td>
+                <td class="tbCell ETD"> JJ MMM --:--</td>
+                <td class="tbCell DEST">LOCAL</td>
+                <td class="tbCell EQUIPAGE">nom.P ISN</td>
                 <td class="tbCell PLANE">N3316C</td>
                 <td class="tbCell VOL">CODE LEÇON</td>
+                <td class="tbCell DISPO">X</td>
             </tr>
             <tr class="tbRow">
-                <td class="tbCell ETD">--:--</td>
+                <td class="tbCell ETD"> JJ MMM --:--</td>
                 <td class="tbCell DEST">LFGJ</td>
-                <td class="tbCell EQUIPAGE">------</td>
+                <td class="tbCell EQUIPAGE">nom.P</td>
                 <td class="tbCell PLANE">PLANE</td>
                 <td class="tbCell VOL">PRIVE</td>
+                <td class="tbCell DISPO">X</td>
             </tr>
             <tr class="tbRow">
-                <td class="tbCell ETD">--:--</td>
-                <td class="tbCell DEST">LSFP</td>
-                <td class="tbCell EQUIPAGE">ISN ------</td>
+                <td class="tbCell ETD"> JJ MMM --:--</td>
+                <td class="tbCell DEST">LOCAL</td>
+                <td class="tbCell EQUIPAGE">nom.P ISN</td>
                 <td class="tbCell PLANE">N3316C</td>
                 <td class="tbCell VOL">CODE LEÇON</td>
+                <td class="tbCell DISPO">X</td>
             </tr>
             <tr class="tbRow">
-                <td class="tbCell ETD">--:--</td>
+                <td class="tbCell ETD"> JJ MMM --:--</td>
                 <td class="tbCell DEST">LFGJ</td>
-                <td class="tbCell EQUIPAGE">------</td>
+                <td class="tbCell EQUIPAGE">nom.P</td>
                 <td class="tbCell PLANE">PLANE</td>
                 <td class="tbCell VOL">PRIVE</td>
+                <td class="tbCell DISPO">X</td>
             </tr>
             <tr class="tbRow">
-                <td class="tbCell ETD">--:--</td>
+                <td class="tbCell ETD"> JJ MMM --:--</td>
                 <td class="tbCell DEST">LFGJ</td>
-                <td class="tbCell EQUIPAGE">------</td>
+                <td class="tbCell EQUIPAGE">nom.P</td>
                 <td class="tbCell PLANE">PLANE</td>
                 <td class="tbCell VOL">PRIVE</td>
+                <td class="tbCell DISPO">X</td>
             </tr>
             <tr class="tbRow">
-                <td class="tbCell ETD">--:--</td>
+                <td class="tbCell ETD"> JJ MMM --:--</td>
                 <td class="tbCell DEST">LFGJ</td>
-                <td class="tbCell EQUIPAGE">------</td>
+                <td class="tbCell EQUIPAGE">nom.P</td>
                 <td class="tbCell PLANE">PLANE</td>
                 <td class="tbCell VOL">PRIVE</td>
+                <td class="tbCell DISPO">X</td>
             </tr>
         </table>
     </main>

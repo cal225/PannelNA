@@ -1,7 +1,9 @@
+
 body {
   background-image: none;
   background-color: rgb(71 71 71);
   display: grid;
+  grid-auto-rows: calc(var(--title-size) + 8rem) auto;
 }
 
 footer {
@@ -22,7 +24,7 @@ footer {
 
 header {
   justify-content: flex-end;
-  background-color: #f4ca17;
+  background-color: black;
   color: black;
 }
 
@@ -42,7 +44,7 @@ header {
 }
 
 .logoHeader p {
-  color: black;
+  color: white;
   font-size: calc(var(--title-size) - 0.5rem);
 }
 
@@ -53,7 +55,7 @@ header {
 }
 
 .UTCWrapper > span {
-  color: black;
+  color: white;
 }
 main {
   display: flex;
@@ -70,6 +72,7 @@ table {
   border-top: 2px solid white;
   border-bottom: 2px solid white;
   padding: 0.5rem 0;
+  text-transform: uppercase;
 }
 
 /* table .tbRow:nth-child(even) {
@@ -84,14 +87,21 @@ table .tbRow:nth-child(odd) {
   background-color: rgb(43 43 43);
 }
 
-tr {
-  border-radius: 10%;
-}
-
 .tbCell {
   font-size: calc(var(--base_font_size) - 1rem);
   text-align: center;
   font-weight: 100;
+  min-height: var(--base_font_size);
+}
+.DISPO{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.DISPO img{
+  height: var(--base_font_size);
 }
 
 .ETD {

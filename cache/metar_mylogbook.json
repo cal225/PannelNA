@@ -1,0 +1,19 @@
+{
+    "id_metar": 14122,
+    "date_metar": "2025-05-16 12:27:01",
+    "wind_direction": "030",
+    "wind_speed": 8,
+    "wind_gust": 20,
+    "wind_min_direction": 0,
+    "wind_max_direction": 0,
+    "wind_string": "030\/08G20KT",
+    "rain": "",
+    "temperature": 15,
+    "dewpoint": 2,
+    "qnh": 1017,
+    "metar": "LFSP 161227 AUTO 030\/08G20KT 15\/2 Q1017",
+    "zd": 3214,
+    "rwy": "02",
+    "headwind": 8,
+    "crosswind": -2
+}

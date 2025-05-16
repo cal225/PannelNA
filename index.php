@@ -8,8 +8,8 @@ $pages = [
     ['logo/logo.php', 'logo/logo-white.php', 'logo/logo-grey.php'],
     'meteo.php',
     'clock.php',
-    ['flight/flight-1.php', 'flight/flight-2.php'],
-    ['METAR/METAR-1.php', 'METAR/METAR-2.php'],
+    'flight.php',
+    'METAR.php',
     'metar-proxy.php',
 ];
 

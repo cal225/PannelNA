@@ -7,7 +7,7 @@
             <img class="hiddden" src="../../assets/RWY 02.svg" alt="">
         </div>
         <div class="windCenter">
-            <div class="frosted backPiste"></div>
+            <div class="backPiste"></div>
             <img class="piste" src="../assets/Piste.svg" alt="piste d'atterisage"> <!-- déjà a 19° (orientation magnetique du pôle nord) -->
             <img class="mancheAir" src="../assets/MancheAir.svg" alt="manche à air">
         </div>

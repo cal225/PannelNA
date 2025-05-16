@@ -1,5 +1,5 @@
 <?php
-$title = "METAR_bis";
+$title = "METAR";
 include 'header.php';
 
 ?>

@@ -17,19 +17,12 @@ echo "
 <header>
     <h1 class='timeNdate'>
 ";
-    if ($title === 'flight-1') {
-        echo "
-        <span class='logoHeader'>
-            <img src='./assets/logo_nextAviation.svg' alt=''>
-            <p>PROCHAINS VOLS</p>
-        </span>";
-    } elseif ($title === 'flight-2') {
-        echo "
-        <span class='logoHeader'>
+if ($title === 'flight') {
+   echo "<span class='logoHeader'>
             <img src='./assets/logo_nextAviation-white.svg' alt=''>
             <p>PROCHAINS VOLS</p>
         </span>";
-    }
+}
 
 echo "
         <span class='date' id='utc-date'></span>
@@ -40,4 +33,3 @@ echo "
     </h1>
 </header>
 ";
-?>

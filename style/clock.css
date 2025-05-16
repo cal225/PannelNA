@@ -1,6 +1,6 @@
 html,
 body {
-  overflow: visible;
+  overflow: hidden;
   font-family: poppins;
   width: 100%;
 }
@@ -19,7 +19,7 @@ main {
 
 .clocksWrapper {
   display: grid;
-  grid-template-columns: 0.5fr 2fr 2fr 0.5fr;
+  grid-template-columns: 0.5fr 2fr 1fr 2fr 0.5fr;
   justify-items: center;
   align-items: center;
   height: 100%;
@@ -37,6 +37,11 @@ main {
 
 .clockType {
   font-size: var(--sub_title_size);
+}
+
+.LSFP {
+  align-self: end;
+  padding-bottom: 3rem;
 }
 
 .clock {
@@ -156,7 +161,7 @@ footer {
     display: none;
   }
   .clocksWrapper {
-    grid-template-columns: 2fr 2fr;
+    grid-template-columns: 2fr 0.5fr 2fr;
   }
   .wrap {
     background-size: 350px;
@@ -175,13 +180,13 @@ footer {
   .minuteHand {
     height: 160px;
   }
-  .hour{
+  .hour {
     height: 160px;
   }
-  .hourHand{
+  .hourHand {
     height: 100px;
   }
-  .outline{
+  .outline {
     padding: 2rem;
     padding-bottom: 1rem;
     gap: 0.5rem;

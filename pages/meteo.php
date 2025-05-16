@@ -11,7 +11,7 @@ include 'header.php';
         <?php include 'meteo/meteoright.php'; ?> 
     </section>
 </main>
-<script src='../pages_back/meteo.js'></script>
+<script src='../script/meteo.js'></script>
 <script src='../pages_back/forecast.js'></script>
 <script src="https://unpkg.com/suncalc@1.9.0/suncalc.js"></script>
 <script src='../pages_back/twilight.js'></script>
