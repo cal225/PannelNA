@@ -1,1 +1,2 @@
-# pages/cache/
+/pages/cache/*
+!/pages/cache/.gitkeep
