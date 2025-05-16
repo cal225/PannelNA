@@ -5,7 +5,7 @@ header("Expires: 0");
 
 // List of pages inside the "pages" folder
 $pages = [
-    'logo.php',
+    ['logo/logo.php', 'logo/logo-white.php', 'logo/logo-grey.php'],
     'meteo.php',
     'clock.php',
     ['flight/flight-1.php', 'flight/flight-2.php'],
