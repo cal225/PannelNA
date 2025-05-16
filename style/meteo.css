@@ -42,7 +42,7 @@ main {
   justify-content: center;
 }
 
-.piste{
+.piste {
   z-index: 3;
 }
 
@@ -64,6 +64,12 @@ main {
   /* border: 1.5px #ededed40 solid; */
   backdrop-filter: blur(20px);
   opacity: 20%;
+}
+
+.cardinal {
+  height: 50%;
+  z-index: 1;
+  position: absolute;
 }
 
 /*

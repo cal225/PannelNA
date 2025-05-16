@@ -6,7 +6,7 @@ $url = "https://mylogbook.fr/mto/dernier_metar.json";
 $cacheDir = __DIR__ . "/../cache";
 $cacheFile = $cacheDir . "/metar_mylogbook.json";
 $lockFile = $cacheFile . ".lock";
-$cacheDuration = 300; // 5 minutes
+$cacheDuration = 120; // i want this to be only 2 min
 
 // Ensure cache directory exists
 if (!is_dir($cacheDir)) {
