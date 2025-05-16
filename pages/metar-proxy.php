@@ -3,7 +3,7 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 
 $url = "https://mylogbook.fr/mto/dernier_metar.json";
-$cacheDir = __DIR__ . "/../cache";
+$cacheDir = __DIR__ . "/cache";
 $cacheFile = $cacheDir . "/metar_mylogbook.json";
 $lockFile = $cacheFile . ".lock";
 $cacheDuration = 120; // i want this to be only 2 min
