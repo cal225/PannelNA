@@ -97,7 +97,7 @@ table .tbRow:nth-child(odd) {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  /* gap: 2rem; */
 }
 
 .DISPO img {

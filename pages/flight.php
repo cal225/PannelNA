@@ -20,7 +20,7 @@ include 'header.php';
                 <td class="tbCell EQUIPAGE">nom.P ISN</td>
                 <td class="tbCell PLANE">N3316C</td>
                 <td class="tbCell VOL">CODE LEÇON</td>
-                <td class="tbCell DISPO">X</td>
+                <td class="tbCell DISPO">-</td>
             </tr>
             <tr class="tbRow">
                 <td class="tbCell ETD"> JJ MMM --:--</td>
@@ -41,7 +41,7 @@ include 'header.php';
                 <td class="tbCell EQUIPAGE">nom.P ISN</td>
                 <td class="tbCell PLANE">N3316C</td>
                 <td class="tbCell VOL">CODE LEÇON</td>
-                <td class="tbCell DISPO">X</td>
+                <td class="tbCell DISPO">-</td>
             </tr>
             <tr class="tbRow">
                 <td class="tbCell ETD"> JJ MMM --:--</td>
@@ -49,7 +49,7 @@ include 'header.php';
                 <td class="tbCell EQUIPAGE">nom.P</td>
                 <td class="tbCell PLANE">PLANE</td>
                 <td class="tbCell VOL">PRIVE</td>
-                <td class="tbCell DISPO">X</td>
+                <td class="tbCell DISPO">-</td>
             </tr>
             <tr class="tbRow">
                 <td class="tbCell ETD"> JJ MMM --:--</td>
@@ -57,7 +57,7 @@ include 'header.php';
                 <td class="tbCell EQUIPAGE">nom.P ISN</td>
                 <td class="tbCell PLANE">N3316C</td>
                 <td class="tbCell VOL">CODE LEÇON</td>
-                <td class="tbCell DISPO">X</td>
+                <td class="tbCell DISPO">-</td>
             </tr>
             <tr class="tbRow">
                 <td class="tbCell ETD"> JJ MMM --:--</td>
@@ -65,7 +65,7 @@ include 'header.php';
                 <td class="tbCell EQUIPAGE">nom.P</td>
                 <td class="tbCell PLANE">PLANE</td>
                 <td class="tbCell VOL">PRIVE</td>
-                <td class="tbCell DISPO">X</td>
+                <td class="tbCell DISPO">-</td>
             </tr>
             <tr class="tbRow">
                 <td class="tbCell ETD"> JJ MMM --:--</td>
@@ -73,7 +73,7 @@ include 'header.php';
                 <td class="tbCell EQUIPAGE">nom.P ISN</td>
                 <td class="tbCell PLANE">N3316C</td>
                 <td class="tbCell VOL">CODE LEÇON</td>
-                <td class="tbCell DISPO">X</td>
+                <td class="tbCell DISPO">-</td>
             </tr>
             <tr class="tbRow">
                 <td class="tbCell ETD"> JJ MMM --:--</td>
@@ -81,7 +81,7 @@ include 'header.php';
                 <td class="tbCell EQUIPAGE">nom.P</td>
                 <td class="tbCell PLANE">PLANE</td>
                 <td class="tbCell VOL">PRIVE</td>
-                <td class="tbCell DISPO">X</td>
+                <td class="tbCell DISPO">-</td>
             </tr>
             <tr class="tbRow">
                 <td class="tbCell ETD"> JJ MMM --:--</td>
@@ -89,7 +89,7 @@ include 'header.php';
                 <td class="tbCell EQUIPAGE">nom.P ISN</td>
                 <td class="tbCell PLANE">N3316C</td>
                 <td class="tbCell VOL">CODE LEÇON</td>
-                <td class="tbCell DISPO">X</td>
+                <td class="tbCell DISPO">-</td>
             </tr>
             <tr class="tbRow">
                 <td class="tbCell ETD"> JJ MMM --:--</td>
@@ -97,7 +97,7 @@ include 'header.php';
                 <td class="tbCell EQUIPAGE">nom.P</td>
                 <td class="tbCell PLANE">PLANE</td>
                 <td class="tbCell VOL">PRIVE</td>
-                <td class="tbCell DISPO">X</td>
+                <td class="tbCell DISPO">-</td>
             </tr>
             <tr class="tbRow">
                 <td class="tbCell ETD"> JJ MMM --:--</td>
@@ -105,7 +105,7 @@ include 'header.php';
                 <td class="tbCell EQUIPAGE">nom.P ISN</td>
                 <td class="tbCell PLANE">N3316C</td>
                 <td class="tbCell VOL">CODE LEÇON</td>
-                <td class="tbCell DISPO">X</td>
+                <td class="tbCell DISPO">-</td>
             </tr>
             <tr class="tbRow">
                 <td class="tbCell ETD"> JJ MMM --:--</td>
@@ -113,7 +113,7 @@ include 'header.php';
                 <td class="tbCell EQUIPAGE">nom.P</td>
                 <td class="tbCell PLANE">PLANE</td>
                 <td class="tbCell VOL">PRIVE</td>
-                <td class="tbCell DISPO">X</td>
+                <td class="tbCell DISPO">-</td>
             </tr>
             <tr class="tbRow">
                 <td class="tbCell ETD"> JJ MMM --:--</td>
@@ -121,7 +121,7 @@ include 'header.php';
                 <td class="tbCell EQUIPAGE">nom.P ISN</td>
                 <td class="tbCell PLANE">N3316C</td>
                 <td class="tbCell VOL">CODE LEÇON</td>
-                <td class="tbCell DISPO">X</td>
+                <td class="tbCell DISPO">-</td>
             </tr>
             <tr class="tbRow">
                 <td class="tbCell ETD"> JJ MMM --:--</td>
@@ -129,7 +129,7 @@ include 'header.php';
                 <td class="tbCell EQUIPAGE">nom.P</td>
                 <td class="tbCell PLANE">PLANE</td>
                 <td class="tbCell VOL">PRIVE</td>
-                <td class="tbCell DISPO">X</td>
+                <td class="tbCell DISPO">-</td>
             </tr>
             <tr class="tbRow">
                 <td class="tbCell ETD"> JJ MMM --:--</td>
@@ -137,7 +137,7 @@ include 'header.php';
                 <td class="tbCell EQUIPAGE">nom.P</td>
                 <td class="tbCell PLANE">PLANE</td>
                 <td class="tbCell VOL">PRIVE</td>
-                <td class="tbCell DISPO">X</td>
+                <td class="tbCell DISPO">-</td>
             </tr>
             <tr class="tbRow">
                 <td class="tbCell ETD"> JJ MMM --:--</td>
@@ -145,7 +145,7 @@ include 'header.php';
                 <td class="tbCell EQUIPAGE">nom.P</td>
                 <td class="tbCell PLANE">PLANE</td>
                 <td class="tbCell VOL">PRIVE</td>
-                <td class="tbCell DISPO">X</td>
+                <td class="tbCell DISPO">-</td>
             </tr>
         </table>
     </main>

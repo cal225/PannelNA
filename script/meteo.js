@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
           updatePressureDisplay(json.qnh, json.zd);
           updateWindDirection(json);
           updateLastUpdateDisplay(json.date_metar);
+          updateRunwayWindIndicators(json);
         } catch (err) {
           console.error("Erreur de parsing JSON:", err);
         }
@@ -58,17 +59,19 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateWindDirection(data) {
-    if (!data.wind_speed || data.wind_speed < 5 || !data.wind_direction) {
-      console.log("Calm or low wind — no indicator update.");
-      return;
-    }
+    // if (!data.wind_speed || data.wind_speed < 5 || !data.wind_direction) {
+    //   console.log("Calm or low wind — no indicator update.");
+    //   return;
+    // }
 
     const windCenter = document.querySelector(".windCenter");
 
+    const one = 1;
     if (
       data.wind_string.includes("VRB") &&
       data.wind_min_direction !== undefined &&
       data.wind_max_direction !== undefined
+      // one > 0
     ) {
       const min = data.wind_min_direction;
       const max = data.wind_max_direction;
@@ -115,4 +118,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateDisplay.textContent = message;
   }
+  function updateRunwayWindIndicators(data) {
+  const activeRunway = data.rwy;
+  const runways = ["02", "20"]; // Extend if needed
+
+  runways.forEach((rwy) => {
+    const container = document.querySelector(`.wind${rwy}`);
+    if (!container) return;
+
+    const pCrosswind = container.querySelector("#crosswind");
+    const pHeadwind = container.querySelector("#headwind");
+    const img = container.querySelector("img");
+
+    if (!pCrosswind || !pHeadwind || !img) return;
+
+    // Reset all classes
+    [pCrosswind, pHeadwind, img].forEach((el) =>
+      el.classList.remove(
+        "hidden",
+        "up",
+        "bttm",
+        "left",
+        "right",
+        "rightNup",
+        "rightNbottom",
+        "leftNbottom",
+        "leftNup"
+      )
+    );
+
+    if (rwy !== activeRunway) {
+      [pCrosswind, pHeadwind, img].forEach((el) =>
+        el.classList.add("hidden")
+      );
+      return;
+    }
+
+    const { headwind, crosswind } = data;
+
+    // Update content with raw values (as you said: "content of the p should be what the JSON sent")
+    pCrosswind.textContent = `${crosswind}kt`;
+    pHeadwind.textContent = `${headwind}kt`;
+
+    // Directional classes for wind
+    if (crosswind < 0) pCrosswind.classList.add("right");
+    else if (crosswind > 0) pCrosswind.classList.add("left");
+
+    if (headwind > 0) pHeadwind.classList.add("up");
+    else if (headwind < 0) pHeadwind.classList.add("bttm");
+
+    // Arrow class (combined headwind/crosswind direction)
+    if (crosswind > 0 && headwind < 0) img.classList.add("rightNup");
+    else if (crosswind > 0 && headwind > 0) img.classList.add("rigthNbottom");
+    else if (crosswind < 0 && headwind > 0) img.classList.add("leftNbottom");
+    else if (crosswind < 0 && headwind < 0) img.classList.add("leftNup");
+  });
+}
+
 });

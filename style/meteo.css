@@ -101,7 +101,7 @@ background: linear-gradient( to bottom, , rgba(255, 255, 255, 0.15) );
   align-self: end;
 }
 
-.wind020 {
+.wind20 {
   align-self: start;
 }
 
@@ -220,7 +220,53 @@ background: linear-gradient( to bottom, , rgba(255, 255, 255, 0.15) );
 
 .fog {
   padding-left: 1ch;
-  width: 14%;
+  width: 82px;
+}
+
+.wind {
+  position: relative;
+}
+
+.wind p {
+  font-size: calc(var(--small_font_size) - 0.2rem);
+  position: absolute;
+}
+
+.cross {
+  padding: calc(var(--base_font_size) - 1rem);
+}
+.rightNup {
+  transform: rotate(180deg);
+}
+.rigthNbottom {
+  transform: rotate(270deg);
+}
+.leftNbottom {
+  transform: rotate(0deg);
+}
+.leftNup {
+  transform: rotate(270deg);
+}
+
+.wind .left {
+  left: 0;
+  bottom: 50%;
+  transform: translate(0, -50%);
+}
+.wind .up {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.wind .right {
+  right: 0;
+  bottom: 50%;
+  transform: translate(0, -50%);
+}
+.wind .bttm {
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 @media screen and (max-width: 1900px) {
@@ -253,7 +299,7 @@ background: linear-gradient( to bottom, , rgba(255, 255, 255, 0.15) );
   }
   .fog {
     padding-left: 1ch;
-    width: 15%;
+    width: 14%;
   }
 }
 @media screen and (max-height: 1000px) {
@@ -300,8 +346,7 @@ background: linear-gradient( to bottom, , rgba(255, 255, 255, 0.15) );
   .heureSol > img {
     height: 8rem;
   }
-  .wind020 > img,
-  .wind02 > img {
+  .cross {
     height: 9rem;
   }
 }
@@ -335,8 +380,7 @@ background: linear-gradient( to bottom, , rgba(255, 255, 255, 0.15) );
   .heureSol > img {
     height: 6rem;
   }
-  .wind020 > img,
-  .wind02 > img {
+  .cross {
     height: 9rem;
   }
   /* .pressure {
