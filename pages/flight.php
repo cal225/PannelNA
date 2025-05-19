@@ -29,8 +29,10 @@ include 'header.php';
                 <td class="tbCell PLANE">PLANE</td>
                 <td class="tbCell VOL">PRIVE</td>
                 <td class="tbCell DISPO"> 
-                    <img src="../assets/Seat.svg" alt="">
-                    <p>1/4</p>
+                    <img class="seat taken" src="../assets/Seat taken.svg" alt="">
+                    <img class="seat free" src="../assets/Seat free.svg" alt="">
+                    <img class="seat free" src="../assets/Seat free.svg" alt="">
+                    <img class="seat free" src="../assets/Seat free.svg" alt="">
                 </td>
             </tr>
             <tr class="tbRow">

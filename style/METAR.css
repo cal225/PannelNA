@@ -79,6 +79,7 @@ main {
 
 .MetarCode{
   font-weight: 500;
+  font-size: var(--base_font_size);
 }
 
 @media screen and (max-width: 1900px) {

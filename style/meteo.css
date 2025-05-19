@@ -1,3 +1,7 @@
+:root {
+  --wedge-size: 0%;
+  --wedge-rotate: 10deg;
+}
 body {
   display: flex;
   flex-direction: column;
@@ -43,33 +47,44 @@ main {
 }
 
 .piste {
+  position: relative;
   z-index: 3;
 }
 
+.windCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  position: relative;
+}
+
 .backPiste {
-  height: 50%;
-  width: auto;
-  aspect-ratio: 1/1;
-  border-radius: 100%;
-  z-index: 5;
+  content: "";
   position: absolute;
+  height: 50%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  z-index: 5;
+
   background-image: conic-gradient(
-    #ffa50000 50%,
-    rgba(245, 250, 255) 50%,
-    rgba(255, 255, 255) 60%,
-    #0000 60%
+    #00000000 50%,
+    aliceblue 50%,
+    aliceblue calc(50% + var(--wedge-size)),
+    #00000000 calc(50% + var(--wedge-size))
   );
-  transform: rotate(250deg);
+
+  transform: rotate(var(--wedge-rotate));
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  /* border: 1.5px #ededed40 solid; */
-  backdrop-filter: blur(20px);
-  opacity: 20%;
+  border: 1.5px solid rgba(237, 237, 237, 0.25);
+  opacity: 0.2;
 }
 
 .cardinal {
-  height: 50%;
+  height: 60%;
   z-index: 1;
   position: absolute;
+  mix-blend-mode: difference;
 }
 
 /*
@@ -88,13 +103,6 @@ background: linear-gradient( to bottom, , rgba(255, 255, 255, 0.15) );
 
 .wind020 {
   align-self: start;
-}
-
-.windCenter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
 }
 
 .mancheAir {
