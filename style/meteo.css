@@ -238,7 +238,7 @@ background: linear-gradient( to bottom, , rgba(255, 255, 255, 0.15) );
 .rightNup {
   transform: rotate(180deg);
 }
-.rigthNbottom {
+.rightNbottom {
   transform: rotate(270deg);
 }
 .leftNbottom {

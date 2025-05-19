@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   function updateRunwayWindIndicators(data) {
   const activeRunway = data.rwy;
-  const runways = ["02", "20"]; // Extend if needed
+  const runways = ["02", "20"];
 
   runways.forEach((rwy) => {
     const container = document.querySelector(`.wind${rwy}`);
@@ -156,22 +156,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const { headwind, crosswind } = data;
 
-    // Update content with raw values (as you said: "content of the p should be what the JSON sent")
+    // Update values
     pCrosswind.textContent = `${crosswind}kt`;
     pHeadwind.textContent = `${headwind}kt`;
 
-    // Directional classes for wind
+    // Directional classes
     if (crosswind < 0) pCrosswind.classList.add("right");
     else if (crosswind > 0) pCrosswind.classList.add("left");
+    else pCrosswind.classList.add("hidden");
 
     if (headwind > 0) pHeadwind.classList.add("up");
     else if (headwind < 0) pHeadwind.classList.add("bttm");
+    else pHeadwind.classList.add("hidden");
 
-    // Arrow class (combined headwind/crosswind direction)
+    // Arrow direction
     if (crosswind > 0 && headwind < 0) img.classList.add("rightNup");
-    else if (crosswind > 0 && headwind > 0) img.classList.add("rigthNbottom");
+    else if (crosswind > 0 && headwind > 0) img.classList.add("rightNbottom"); // fixed typo
     else if (crosswind < 0 && headwind > 0) img.classList.add("leftNbottom");
     else if (crosswind < 0 && headwind < 0) img.classList.add("leftNup");
+
+    // Update image based on wind presence
+    if (headwind === 0 || crosswind === 0) {
+      img.src = "../../assets/wind arrow.svg"; // single arrow
+    } else {
+      img.src = "../../assets/wind arrows.svg"; // cross arrow
+    }
   });
 }
 
