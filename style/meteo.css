@@ -18,6 +18,8 @@ main {
   grid-template-columns: 4fr 3fr;
   gap: 3rem;
   padding: 0 3rem;
+  /* padding: 1rem 3rem 0 ;
+  height: inherit; */
 }
 
 .windContainer {
@@ -29,10 +31,7 @@ main {
 .mancheContainer {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
-}
-
-.mancheContainer {
-  padding: 0 5%;
+  /* padding: 10% 0 0 0; */
 }
 
 .MaJ {
@@ -57,6 +56,7 @@ main {
   justify-content: center;
   align-self: center;
   position: relative;
+  padding: 0 0 10%;
 }
 
 .backPiste {
@@ -225,6 +225,11 @@ background: linear-gradient( to bottom, , rgba(255, 255, 255, 0.15) );
 
 .wind {
   position: relative;
+  height: calc(var(--sub_title_size) + 4.5rem + var(--base_font_size));
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .wind p {
@@ -234,6 +239,7 @@ background: linear-gradient( to bottom, , rgba(255, 255, 255, 0.15) );
 
 .cross {
   padding: calc(var(--base_font_size) - 1rem);
+  height: calc(var(--sub_title_size) + 4.5rem);
 }
 .rightNup {
   transform: rotate(180deg);
@@ -245,13 +251,13 @@ background: linear-gradient( to bottom, , rgba(255, 255, 255, 0.15) );
   transform: rotate(0deg);
 }
 .leftNup {
-  transform: rotate(270deg);
+  transform: rotate(90deg);
 }
 
 .wind .left {
   left: 0;
   bottom: 50%;
-  transform: translate(0, -50%);
+  transform: translate(-50%, 0);
 }
 .wind .up {
   top: 0;
@@ -261,7 +267,7 @@ background: linear-gradient( to bottom, , rgba(255, 255, 255, 0.15) );
 .wind .right {
   right: 0;
   bottom: 50%;
-  transform: translate(0, -50%);
+  transform: translate(-50%, 0);
 }
 .wind .bttm {
   bottom: 0;
@@ -303,10 +309,6 @@ background: linear-gradient( to bottom, , rgba(255, 255, 255, 0.15) );
   }
 }
 @media screen and (max-height: 1000px) {
-  .windContainer {
-    height: 100%;
-  }
-
   .heureSol > img {
     height: 8rem;
   }
@@ -347,7 +349,10 @@ background: linear-gradient( to bottom, , rgba(255, 255, 255, 0.15) );
     height: 8rem;
   }
   .cross {
-    height: 9rem;
+    height: 7rem;
+  }
+  .wind p {
+    font-size: var(--small_font_size);
   }
 }
 

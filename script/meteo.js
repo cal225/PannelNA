@@ -59,19 +59,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function updateWindDirection(data) {
-    // if (!data.wind_speed || data.wind_speed < 5 || !data.wind_direction) {
-    //   console.log("Calm or low wind — no indicator update.");
-    //   return;
-    // }
-
     const windCenter = document.querySelector(".windCenter");
 
     const one = 1;
     if (
       data.wind_string.includes("VRB") &&
       data.wind_min_direction !== undefined &&
-      data.wind_max_direction !== undefined
-      // one > 0
+      data.wind_max_direction !== undefined &&
+      one > 0
     ) {
       const min = data.wind_min_direction;
       const max = data.wind_max_direction;
@@ -91,6 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
         mancheAir.style.transform = `rotate(${data.wind_direction}deg)`;
     }
   }
+
   function updateLastUpdateDisplay(dateMetarString) {
     const updateDisplay = document.querySelector(".MaJ");
     if (!updateDisplay) return;
@@ -119,69 +115,88 @@ document.addEventListener("DOMContentLoaded", () => {
     updateDisplay.textContent = message;
   }
   function updateRunwayWindIndicators(data) {
-  const activeRunway = data.rwy;
-  const runways = ["02", "20"];
+    const activeRunway = data.rwy;
+    const runways = ["02", "20"];
+    const windstring = data.wind_string;
 
-  runways.forEach((rwy) => {
-    const container = document.querySelector(`.wind${rwy}`);
-    if (!container) return;
+    runways.forEach((rwy) => {
+      const container = document.querySelector(`.wind${rwy}`);
+      if (!container) return;
 
-    const pCrosswind = container.querySelector("#crosswind");
-    const pHeadwind = container.querySelector("#headwind");
-    const img = container.querySelector("img");
+      const pCrosswind = container.querySelector("#crosswind");
+      const pHeadwind = container.querySelector("#headwind");
+      const img = container.querySelector("img");
 
-    if (!pCrosswind || !pHeadwind || !img) return;
+      if (!pCrosswind || !pHeadwind || !img) return;
 
-    // Reset all classes
-    [pCrosswind, pHeadwind, img].forEach((el) =>
-      el.classList.remove(
-        "hidden",
-        "up",
-        "bttm",
-        "left",
-        "right",
-        "rightNup",
-        "rightNbottom",
-        "leftNbottom",
-        "leftNup"
-      )
-    );
-
-    if (rwy !== activeRunway) {
+      // Reset all classes
       [pCrosswind, pHeadwind, img].forEach((el) =>
-        el.classList.add("hidden")
+        el.classList.remove(
+          "hidden",
+          "up",
+          "bttm",
+          "left",
+          "right",
+          "rightNup",
+          "rightNbottom",
+          "leftNbottom",
+          "leftNup"
+        )
       );
-      return;
-    }
 
-    const { headwind, crosswind } = data;
+      if (rwy !== activeRunway) {
+        [pCrosswind, pHeadwind, img].forEach((el) =>
+          el.classList.add("hidden")
+        );
+        return;
+      }
 
-    // Update values
-    pCrosswind.textContent = `${crosswind}kt`;
-    pHeadwind.textContent = `${headwind}kt`;
+      const { headwind, crosswind } = data;
 
-    // Directional classes
-    if (crosswind < 0) pCrosswind.classList.add("right");
-    else if (crosswind > 0) pCrosswind.classList.add("left");
-    else pCrosswind.classList.add("hidden");
+      // Update values
+      pCrosswind.textContent = `${crosswind}kt`;
+      pHeadwind.textContent = `${headwind}kt`;
 
-    if (headwind > 0) pHeadwind.classList.add("up");
-    else if (headwind < 0) pHeadwind.classList.add("bttm");
-    else pHeadwind.classList.add("hidden");
+      // Directional classes
+      if (crosswind < 0) pCrosswind.classList.add("right");
+      else if (crosswind > 0) pCrosswind.classList.add("left");
+      else pCrosswind.classList.add("hidden");
 
-    // Arrow direction
-    if (crosswind > 0 && headwind < 0) img.classList.add("rightNup");
-    else if (crosswind > 0 && headwind > 0) img.classList.add("rightNbottom"); // fixed typo
-    else if (crosswind < 0 && headwind > 0) img.classList.add("leftNbottom");
-    else if (crosswind < 0 && headwind < 0) img.classList.add("leftNup");
+      if (headwind > 0) pHeadwind.classList.add("up");
+      else if (headwind < 0) pHeadwind.classList.add("bttm");
+      else pHeadwind.classList.add("hidden");
 
-    // Update image based on wind presence
-    if (headwind === 0 || crosswind === 0) {
-      img.src = "../../assets/wind arrow.svg"; // single arrow
-    } else {
-      img.src = "../../assets/wind arrows.svg"; // cross arrow
-    }
-  });
-}
+      // Arrow direction
+      if (crosswind > 0 && headwind < 0) img.classList.add("rightNup");
+      else if (crosswind > 0 && headwind > 0) img.classList.add("rightNbottom"); 
+      else if (crosswind < 0 && headwind > 0) img.classList.add("leftNbottom");
+      else if (crosswind < 0 && headwind < 0) img.classList.add("leftNup");
 
+      // Update image based on wind presence
+      if (headwind === 0 || crosswind === 0) {
+        img.src = "../../assets/wind arrow.svg"; // single arrow
+      } else {
+        img.src = "../../assets/wind arrows.svg"; // cross arrow
+      }
+      // const one = 0
+      if (windstring === "CALM") {
+        [pCrosswind, pHeadwind, img].forEach((el) =>
+          el.classList.remove(
+            "hidden",
+            "up",
+            "bttm",
+            "left",
+            "right",
+            "rightNup",
+            "rightNbottom",
+            "leftNbottom",
+            "leftNup"
+          )
+        );
+        img.src = "../../assets/wind arrows.svg"; // cross arrow
+        pHeadwind.classList.add("up");
+        pCrosswind.classList.add("right");
+      }
+    });
+  }
 });

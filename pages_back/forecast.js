@@ -1,28 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".weatherUpdate");
 
-  // WeatherAPI key and endpoint
-  const apiKey = "95e866d055a843c0bb882659251405";
-  const location = "pontarlier";
-  const url = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${location}&days=1&aqi=no&alerts=no`;
+  // Fetch from your PHP caching proxy
+  const url = "/?page=5.2"; // update this path
 
   fetch(url)
     .then((response) => response.json())
     .then((data) => {
+      if (!data || !data.forecast || !data.forecast.forecastday) {
+        container.innerHTML = `<p>Erreur météo (données invalides)</p>`;
+        return;
+      }
+
       const hours = data.forecast.forecastday[0].hour;
       const currentUTC = new Date().getUTCHours();
 
-      // Get H-1, H, H+1
       const displayHours = [
         hours.find((h) => new Date(h.time).getUTCHours() === currentUTC),
-        hours.find((h) => new Date(h.time).getUTCHours() === currentUTC + 2),
-        hours.find((h) => new Date(h.time).getUTCHours() === currentUTC + 4),
+        hours.find((h) => new Date(h.time).getUTCHours() === (currentUTC + 2) % 24),
+        hours.find((h) => new Date(h.time).getUTCHours() === (currentUTC + 4) % 24),
       ];
 
-      container.innerHTML = ""; // Clear previous content
+      container.innerHTML = "";
 
       displayHours.forEach((hour) => {
-        if (!hour) return; // Skip null values (e.g., around midnight)
+        if (!hour) return;
 
         const utcHour = new Date(hour.time).getUTCHours();
         const formattedHour = utcHour.toString().padStart(2, "0");
@@ -34,18 +36,17 @@ document.addEventListener("DOMContentLoaded", () => {
             <img src="${icon}" alt="${hour.condition.text}">
           </div>
         `;
-        // console.log(data);
       });
     })
     .catch((error) => {
-      console.error("Error fetching weather data:", error);
+      console.error("Erreur récupération météo :", error);
       container.innerHTML = `<p>Erreur météo</p>`;
     });
 });
 
 function getCustomIcon(code, isDay) {
   const map = {
-    1000: "clear", // Sunny / Clear
+    1000: "clear",
     1003: "cloudy-1",
     1006: "cloudy-2",
     1009: "cloudy",
@@ -97,7 +98,6 @@ function getCustomIcon(code, isDay) {
 
   let base = map[code] || "cloudy";
 
-  // Add day/night variant if available
   const hasDayNight = [
     "clear",
     "cloudy-1",
