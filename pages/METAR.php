@@ -1,15 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+$title = "METAR";
+include 'header.php';
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>METAR</title>
-</head>
+?>
+<main>
+    <div class="METAF_wrapper frosted Top">
+        <div class="infoWrapper">
+            <p class="PisteCode">
+                LFGJ
+            </p>
+            <div class="crop">
+                <img src="../assets/france.svg.png" alt="">
+            </div>
+            <p class="alt">Alt : <span id="alt">620</span> ft</p>
+        </div>
+        <div class="titleWraper">
+            <p> METAR</p>
+            <p>TAF</p>
+        </div>
+        <div class="codeWrapper" data-icao="LFGJ">
+            <p class="MetarCode Code"></p>
+            <p class="TafCode Code"></p>
+        </div>
+    </div>
+    <div class="METAF_wrapper frosted Bottom">
+        <div class="infoWrapper">
+            <p class="PisteCode">
+                LSGC
+            </p>
+            <div class="crop">
+                <img src="../assets/swiss.svg.png" alt="">
+            </div>
+            <p class="alt">Alt : <span id="alt">300</span> ft</p>
+        </div>
+        <div class="titleWraper">
+            <p> METAR</p>
+            <p>TAF</p>
+        </div>
+        <div class="codeWrapper" data-icao="LSGC">
+            <p class="MetarCode Code"></p>
+            <p class="TafCode Code"></p>
+        </div>
+    </div>
+</main>
 
-<body>
-    <h1>Hello world 3</h1>
+<?php
+putenv('METAR=Bearer rDahirOQPf9u5UajlxNP7GbD_rJDSEjbFTNRRfe2CMo');
+?>
 
-</body>
-
-</html>
+<script>
+    const METAR = "<?= getenv('METAR') ?>";
+</script>
+<script src="../pages_back/METAR.js"></script>
+<?php
+include 'footer.php';
+?>

@@ -3,15 +3,50 @@
   src: url(Poppins/Poppins-Bold.ttf);
   font-weight: bold;
 }
+
+@font-face {
+  font-family: poppins;
+  src: url(Poppins/Poppins-Regular.ttf);
+  font-weight: light;
+}
+
+@font-face {
+  font-family: poppins;
+  src: url(Poppins/Poppins-SemiBold.ttf);
+  font-weight: 500;
+}
 * {
   padding: 0;
   margin: 0;
+  font-family: poppins;
+  font-weight: bold;
+  color: aliceblue;
 }
 
-:root{
-  --small_font_size: 1.5rem;
-  --base_font_size: 3rem;
-  --sub_title_size: 4rem;
+body {
+  background-image: url(/assets/pont-air-photo-2.webp);
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+}
+
+:root {
+  --small_font_size: 2rem;
+  --base_font_size: 2.7rem;
+  --sub_title_size: 4.3rem;
+  --title-size: 5rem;
+}
+
+.logoHeader {
+  display: none;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.lowercase {
+  text-transform: lowercase;
 }
 
 html,
@@ -19,14 +54,19 @@ body {
   overflow: hidden;
 }
 
+.hidden {
+  display: none;
+}
+
 .timeNdate {
   font-family: poppins;
   display: flex;
-  font-size: 5em;
-  /* width: 700px; */
+  font-size: var(--title-size);
   justify-content: space-between;
   gap: 10%;
+  padding: 0.5rem;
 }
+
 header {
   display: flex;
   justify-content: center;
@@ -52,3 +92,60 @@ header {
   border-radius: 40px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
 }
+
+@media screen and (max-width: 1900px) {
+  :root {
+    --small_font_size: 1.5rem;
+    --base_font_size: 2rem;
+    --sub_title_size: 2.5rem;
+    --title-size: 3rem;
+  }
+
+  .timeNdate {
+    gap: 10%;
+    padding: 0.5rem;
+  }
+}
+
+@media screen and (max-height: 1000px) {
+  :root {
+    --small_font_size: 1.5rem;
+    --base_font_size: 2.1rem;
+    --sub_title_size: 3rem;
+    --title-size: 3.5rem;
+  }
+}
+
+@media screen and (max-width: 1081px) {
+  :root {
+    --small_font_size: 1rem;
+    --base_font_size: 1.5rem;
+    --sub_title_size: 2.5rem;
+    --title-size: 3rem;
+  }
+
+  .timeNdate {
+    gap: 10%;
+    padding: 0.5rem;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  :root {
+    --small_font_size: 1.2rem;
+    --base_font_size: 1.7rem;
+    --sub_title_size: 2.5rem;
+    --title-size: 3rem;
+  }
+
+  .timeNdate {
+    gap: 10%;
+    padding: 0.5rem;
+  }
+}
+/** types of media
+@media screen and (max-width: 1900px)
+@media screen and (max-height: 1000px)
+@media screen and (max-width: 1081px)
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape)
+*/

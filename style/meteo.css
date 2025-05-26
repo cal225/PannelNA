@@ -1,9 +1,11 @@
+:root {
+  --wedge-size: 0%;
+  --wedge-rotate: 10deg;
+}
 body {
-  background-image: url(/assets/ChatGPT\ Image\ Apr\ 24\,\ 2025\,\ 08_48_45\ AM.png);
-  background-position: center;
-  background-size: cover;
-  display: grid;
-  grid-template-rows: 0.5fr 9fr;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100vh;
 }
 * {
@@ -13,7 +15,11 @@ body {
 }
 main {
   display: grid;
-  grid-template-columns: 4.5fr 3fr;
+  grid-template-columns: 4fr 3fr;
+  gap: 3rem;
+  padding: 0 3rem;
+  /* padding: 1rem 3rem 0 ;
+  height: inherit; */
 }
 
 .windContainer {
@@ -25,13 +31,7 @@ main {
 .mancheContainer {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
-}
-.leftContainer {
-  padding: 0em 1em 0 2em;
-}
-
-.mancheContainer {
-  padding: 0 5%;
+  padding: 0 var(--base_font_size);
 }
 
 .MaJ {
@@ -40,20 +40,56 @@ main {
 }
 
 .metarWind {
-  font-size: 4rem;
+  font-size: var(--sub_title_size);
   display: flex;
   justify-content: center;
 }
 
-.backPiste {
-  height: 50%;
-  aspect-ratio: 1/1;
-  border-radius: 100%;
-  z-index: -1;
-  position: absolute;
+.piste {
+  position: relative;
+  z-index: 3;
 }
 
-/* .piste {
+.windCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  position: relative;
+  padding: 0 0 10%;
+}
+
+.backPiste {
+  display: none; /* <--- this line ensures it’s hidden by default */
+  position: absolute;
+  height: 50%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  z-index: 5;
+  background-image: conic-gradient(
+    #00000000 50%,
+    aliceblue 50%,
+    aliceblue calc(50% + var(--wedge-size)),
+    #00000000 calc(50% + var(--wedge-size))
+  );
+  transform: rotate(var(--wedge-rotate));
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  border: 1.5px solid rgba(237, 237, 237, 0.25);
+  opacity: 0.2;
+}
+
+.cardinal {
+  height: 60%;
+  z-index: 1;
+  position: absolute;
+  mix-blend-mode: difference;
+}
+
+/*
+background: linear-gradient( to bottom, , rgba(255, 255, 255, 0.15) );
+  border-radius: 40px;
+
+ .piste {
   width: 80%; 
   height: auto; 
   max-width: 300px;
@@ -63,21 +99,14 @@ main {
   align-self: end;
 }
 
-.wind020 {
+.wind20 {
   align-self: start;
-}
-
-.windCenter {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: center;
 }
 
 .mancheAir {
   z-index: 10;
   position: absolute;
-  transform: rotate(40deg);
+  transform: rotate(19deg);
   height: 50%;
 }
 
@@ -85,7 +114,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
+  padding: 2rem;
   text-transform: uppercase;
 }
 
@@ -96,29 +125,47 @@ main {
   grid-template-columns: 1fr;
 }
 
-.METAR_top {
+.METAR > div {
+  padding: 1rem;
   display: flex;
+  align-items: center;
   justify-content: center;
+}
+.METAR_top > img {
+  height: 82px;
+}
+
+.METAR_bottom {
+  border-top: 5px white solid;
+}
+
+.METAR_bottom > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.pressure {
+  border-left: 5px white solid;
+  gap: 0.5ch;
   align-items: center;
 }
 
-.Metar_separator{
-  width: 5px;
-  height: 100%;
-  background-color: white;
-  transform: rotate(90deg);
+.pressureIcon {
+  height: 80%;
 }
 
-.METAR_bottom{
- display: flex;
- justify-content: space-evenly;
- align-items: center;
+.QNH {
+  justify-content: space-evenly;
 }
 
-.METAR_bottom_separator{
+.METAR_separator {
+  align-self: stretch;
   width: 5px;
+  border-right: 5px white solid;
   height: 90px;
-  background-color: white;
 }
 
 .heureAero {
@@ -152,6 +199,13 @@ main {
   padding-bottom: 0px;
 }
 
+.previsiont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .previsiont > img {
   height: 8rem;
 }
@@ -160,5 +214,186 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0em 2em 0 1em;
+}
+
+.fog {
+  padding-left: 1ch;
+  width: 82px;
+}
+
+.wind {
+  position: relative;
+  height: calc(var(--sub_title_size) + 4.5rem + var(--base_font_size));
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wind p {
+  font-size: calc(var(--small_font_size) - 0.2rem);
+  position: absolute;
+}
+
+.cross {
+  padding: calc(var(--base_font_size) - 1rem);
+  height: calc(var(--sub_title_size) + 4.5rem);
+}
+.rightNup {
+  transform: rotate(180deg);
+}
+.rightNbottom {
+  transform: rotate(270deg);
+}
+.leftNbottom {
+  transform: rotate(0deg);
+}
+.leftNup {
+  transform: rotate(90deg);
+}
+
+.wind .left {
+  left: 0;
+  bottom: 50%;
+  transform: translate(-50%, 0);
+}
+.wind .up {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.wind .right {
+  right: 0;
+  bottom: 50%;
+  transform: translate(-50%, 0);
+}
+.wind .bttm {
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+@media screen and (max-width: 1900px) {
+  .cards {
+    padding: 0.5rem;
+  }
+  .weatherUpdate {
+    padding-bottom: 0px;
+  }
+  .METAR_top > img {
+    height: 4.5rem;
+  }
+  .pressureIcon {
+    height: 4.5rem;
+  }
+  .previsiont > img {
+    height: 7rem;
+  }
+  .heureSol > img {
+    height: 8rem;
+  }
+  .piste {
+    height: 30rem;
+  }
+  .backPiste {
+    height: 45%;
+  }
+  .mancheAir {
+    height: 45%;
+  }
+  .fog {
+    padding-left: 1ch;
+    width: 14%;
+  }
+}
+@media screen and (max-height: 1000px) {
+  .heureSol > img {
+    height: 8rem;
+  }
+  .previsiont > img {
+    height: 7rem;
+  }
+
+  .timeNdate {
+    font-size: 3.5rem;
+  }
+}
+@media screen and (max-width: 1081px) {
+  .cards {
+    padding: 0.2rem;
+  }
+  .METAR_top > img {
+    height: 4rem;
+  }
+  .pressureIcon {
+    height: 4rem;
+  }
+  .previsiont > img {
+    height: 6rem;
+  }
+  .heureSol > img {
+    height: 6rem;
+  }
+  .piste {
+    height: 30rem;
+  }
+  .backPiste {
+    height: 40%;
+  }
+  .mancheAir {
+    height: 40%;
+  }
+  .heureSol > img {
+    height: 8rem;
+  }
+  .cross {
+    height: 7rem;
+  }
+  .wind p {
+    font-size: var(--small_font_size);
+  }
+}
+
+@media only screen and (min-device-width: 700px) and (max-device-width: 1024px) and (orientation: landscape) {
+  main {
+    display: grid;
+    grid-template-columns: 4.2fr 3.1fr;
+  }
+  .cards {
+    padding: 0.2rem;
+  }
+  .METAR_top > img {
+    height: 4rem;
+  }
+  .pressureIcon {
+    height: 4rem;
+  }
+  .previsiont > img {
+    height: 6rem;
+  }
+  .piste {
+    height: 30rem;
+  }
+  .backPiste {
+    height: 40%;
+  }
+  .mancheAir {
+    height: 40%;
+  }
+  .heureSol > img {
+    height: 6rem;
+  }
+  .cross {
+    height: 9rem;
+  }
+  /* .pressure {
+    gap: 0ch;
+    justify-content: space-between; */
+  /* } */
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  main {
+    grid-template-rows: 4fr 3fr;
+  }
 }
