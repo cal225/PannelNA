@@ -10,7 +10,8 @@ $pages = [
     'clock.php',
     'flight.php',
     'METAR.php',
-    ['selfcache/metar-proxy.php', 'selfcache/suncalc_cache.php', 'selfcache/weather_cache.php']
+    ['../pages_back/selfcache/metar-proxy.php', '../pages_back/selfcache/suncalc_cache.php', '../pages_back/selfcache/weather_cache.php', '../pages_back/selfcache/aviation_cache.php'],
+    '../pages_back/get_vols.php'
 ];
 
 

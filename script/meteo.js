@@ -2,10 +2,12 @@ let lastRequestTime = 0;
 const debounceTime = 5 * 60 * 1000; // 5 minutes
 
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("JS Loaded");
   const windDisplay = document.querySelector(".metarWind p");
   const dewpointDisplay = document.querySelector(".rose p");
   const pressureDisplay = document.querySelector(".METAR_bottom");
-  const mancheAir = document.querySelector(".backPiste");
+  const backPiste = document.querySelector(".backPiste");
+  const mancheAir = document.querySelector(".mancheAir");
 
   fetchData();
 
@@ -31,19 +33,20 @@ document.addEventListener("DOMContentLoaded", () => {
           }
 
           dewpointDisplay.textContent = `${json.temperature}° / ${json.dewpoint}°`;
-          windDisplay.textContent = json.wind_string || "Pas de données vent";
+          const windString = String(json.wind_string).replace("000", "360")
+
+          windDisplay.textContent = windString || "Pas de données vent";
 
           updatePressureDisplay(json.qnh, json.zd);
-          updateWindDirection(json);
           updateLastUpdateDisplay(json.date_metar);
           updateRunwayWindIndicators(json);
+          updateWindDirection(json);
         } catch (err) {
           console.error("Erreur de parsing JSON:", err);
         }
       })
       .catch((error) => console.error("Erreur réseau:", error));
   }
-
   function updatePressureDisplay(qnh, zd) {
     if (!pressureDisplay) return;
 
@@ -57,33 +60,31 @@ document.addEventListener("DOMContentLoaded", () => {
         <p class="capitalize">Zd ${zd} <span class="lowercase">ft</span></p>
       </div>`;
   }
+  function updateWindDirection(json) {
+    if (!mancheAir || !backPiste) return;
 
-  function updateWindDirection(data) {
-    const windCenter = document.querySelector(".windCenter");
-
-    const one = 1;
     if (
-      data.wind_string.includes("VRB") &&
-      data.wind_min_direction !== undefined &&
-      data.wind_max_direction !== undefined &&
-      one > 0
+      json.wind_direction === "VRB" &&
+      json.wind_min_direction !== undefined &&
+      json.wind_max_direction !== undefined
     ) {
-      const min = data.wind_min_direction;
-      const max = data.wind_max_direction;
+      const min = parseInt(json.wind_min_direction);
+      const max = parseInt(json.wind_max_direction);
       const diff = (max - min + 360) % 360;
-      const wedgePercent = (diff / 360) * 100;
       const center = (min + diff / 2) % 360;
 
-      if (mancheAir) mancheAir.style.transform = `rotate(${center}deg)`;
-      if (windCenter) {
-        windCenter.style.setProperty("--wedge-size", `${wedgePercent}%`);
-        windCenter.style.setProperty("--wedge-rotate", `${center}deg`);
-      }
+      mancheAir.style.transform = `rotate(${center}deg)`;
 
-      console.log(`Vent variable de ${min} à ${max} => centre ${center}°`);
+      backPiste.style.display = "block";
+      backPiste.style.transform = `rotate(${min}deg)`;
+      backPiste.style.background = `conic-gradient(rgba(255,0,0,0.3) ${diff}deg, transparent 0deg)`;
+
+      console.log(`Variable wind: min ${min}, max ${max}, center ${center}`);
     } else {
-      if (mancheAir)
-        mancheAir.style.transform = `rotate(${data.wind_direction}deg)`;
+      const angle = parseInt(json.wind_direction);
+      mancheAir.style.transform = `rotate(${angle}deg)`;
+      backPiste.style.display = "none";
+      console.log(`Fixed wind: ${angle}°`);
     }
   }
 
@@ -154,12 +155,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const { headwind, crosswind } = data;
 
       // Update values
-      pCrosswind.textContent = `${crosswind}kt`;
+      crossFiltered = String(crosswind).replace("-", "");
+      pCrosswind.textContent = `${crossFiltered}kt`;
       pHeadwind.textContent = `${headwind}kt`;
 
       // Directional classes
-      if (crosswind < 0) pCrosswind.classList.add("right");
-      else if (crosswind > 0) pCrosswind.classList.add("left");
+      if (crosswind > 0) pCrosswind.classList.add("right");
+      else if (crosswind < 0) pCrosswind.classList.add("left");
       else pCrosswind.classList.add("hidden");
 
       if (headwind > 0) pHeadwind.classList.add("up");
@@ -167,10 +169,10 @@ document.addEventListener("DOMContentLoaded", () => {
       else pHeadwind.classList.add("hidden");
 
       // Arrow direction
-      if (crosswind > 0 && headwind < 0) img.classList.add("rightNup");
-      else if (crosswind > 0 && headwind > 0) img.classList.add("rightNbottom"); 
-      else if (crosswind < 0 && headwind > 0) img.classList.add("leftNbottom");
-      else if (crosswind < 0 && headwind < 0) img.classList.add("leftNup");
+      if (crosswind < 0 && headwind < 0) img.classList.add("rightNup");
+      else if (crosswind < 0 && headwind > 0) img.classList.add("rightNbottom");
+      else if (crosswind > 0 && headwind > 0) img.classList.add("leftNbottom");
+      else if (crosswind > 0 && headwind < 0) img.classList.add("leftNup");
 
       // Update image based on wind presence
       if (headwind === 0 || crosswind === 0) {

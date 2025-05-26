@@ -4,17 +4,13 @@ header("Access-Control-Allow-Methods: GET, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
 header("Content-Type: application/json");
 
-// Configuration
-$location = "pontarlier";
-$apiKey = "95e866d055a843c0bb882659251405";
-$url = "https://api.weatherapi.com/v1/forecast.json?key=$apiKey&q=$location&days=1&aqi=no&alerts=no";
-
-$cacheDir = "/tmp/weather_cache";
-$cacheFile = "$cacheDir/weather_$location.json";
+$url = "https://mylogbook.fr/mto/dernier_metar.json";
+$cacheDir = "../tmp/metar_cache";
+$cacheFile = $cacheDir . "/metar_mylogbook.json";
 $lockFile = $cacheFile . ".lock";
-$cacheDuration = 900; // 15 minutes
+$cacheDuration = 120; // 2 minutes
 
-// Create cache directory if needed
+// Ensure cache directory exists
 if (!is_dir($cacheDir)) {
     if (!mkdir($cacheDir, 0755, true)) {
         error_log("Failed to create cache directory: $cacheDir");
@@ -25,14 +21,16 @@ if (!is_writable($cacheDir)) {
     error_log("Directory not writable: $cacheDir");
 }
 
-// Optional ?nocache=1
+// Allow forcing fresh fetch via ?nocache=1
 $forceRefresh = isset($_GET['nocache']) && $_GET['nocache'] == '1';
 
+// Serve cached version if still fresh
 if (!$forceRefresh && file_exists($cacheFile) && (time() - filemtime($cacheFile)) < $cacheDuration) {
     echo file_get_contents($cacheFile);
     exit;
 }
 
+// Try to get a lock
 $lock = fopen($lockFile, 'w');
 if (!$lock) {
     error_log("Failed to open lock file: $lockFile");
@@ -43,42 +41,49 @@ if ($lock && flock($lock, LOCK_EX)) {
 
     if ($data === false) {
         $error = error_get_last();
+
+        // Serve stale cache if available
         if (file_exists($cacheFile)) {
             echo file_get_contents($cacheFile);
         } else {
             echo json_encode([
-                "error" => "Failed to fetch weather",
-                "details" => $error['message'] ?? "Unknown error"
+                "error" => "Échec de récupération METAR",
+                "details" => $error['message'] ?? 'Erreur inconnue'
             ]);
         }
+
         flock($lock, LOCK_UN);
         fclose($lock);
         exit;
     }
 
+    // Validate JSON before saving
     if (json_decode($data) === null) {
-        error_log("Invalid JSON from WeatherAPI");
+        error_log("Invalid JSON fetched from $url");
         if (file_exists($cacheFile)) {
             echo file_get_contents($cacheFile);
         } else {
             echo json_encode([
-                "error" => "Invalid JSON from WeatherAPI"
+                "error" => "JSON invalide reçu depuis la source"
             ]);
         }
+
         flock($lock, LOCK_UN);
         fclose($lock);
         exit;
     }
 
+    // Save fresh data and release lock
     file_put_contents($cacheFile, $data);
     flock($lock, LOCK_UN);
     fclose($lock);
 
     echo $data;
 } else {
+    // Could not get lock — fallback to cached version
     if (file_exists($cacheFile)) {
         echo file_get_contents($cacheFile);
     } else {
-        echo json_encode(["error" => "Unable to access cache"]);
+        echo json_encode(["error" => "Impossible d'accéder au cache"]);
     }
 }

@@ -1,53 +1,23 @@
-async function fetchAviationData(icaoCode, metarToken) {
-  const metarUrl = `https://avwx.rest/api/metar/${icaoCode}`;
-  const tafUrl = `https://avwx.rest/api/taf/${icaoCode}`;
+async function fetchAviationData(icaoCode) {
   const wrapper = document.querySelector(`.codeWrapper[data-icao="${icaoCode}"]`);
-
   if (!wrapper) return;
 
   const metarP = wrapper.querySelector(".MetarCode");
   const tafP = wrapper.querySelector(".TafCode");
 
   try {
-    const [metarRes, tafRes] = await Promise.all([
-      fetch(metarUrl, {
-        headers: {
-          Authorization: metarToken,
-          Accept: "application/json"
-        }
-      }),
-      fetch(tafUrl, {
-        headers: {
-          Authorization: metarToken,
-          Accept: "application/json"
-        }
-      })
-    ]);
+    const response = await fetch(`/path/to/aviation_cache.php?icao=${icaoCode}`);
+    if (!response.ok) throw new Error("API error");
 
-    // METAR
-    if (metarRes.ok) {
-      const metarData = await metarRes.json();
-      metarP.textContent = metarData.raw || "No METAR available";
-    } else {
-      metarP.textContent = "Error fetching METAR";
-    }
-
-    // TAF
-    if (tafRes.ok) {
-      const tafData = await tafRes.json();
-      tafP.textContent = tafData.raw || "No TAF available";
-    } else {
-      tafP.textContent = "No TAF data";
-    }
+    const data = await response.json();
+    metarP.textContent = data.metar || "No METAR";
+    tafP.textContent = data.taf || "No TAF";
   } catch (err) {
-    console.error(`Failed to fetch data for ${icaoCode}:`, err);
-    metarP.textContent = "Error loading METAR";
-    tafP.textContent = "Error loading TAF";
+    console.error(`Error loading aviation data for ${icaoCode}:`, err);
+    metarP.textContent = "Error METAR";
+    tafP.textContent = "Error TAF";
   }
 }
 
-// Get token from PHP
-// const METAR = "<?= getenv('METAR') ?>";
-
-// Airports
-["LFGJ", "LSGC"].forEach(code => fetchAviationData(code, METAR));
+// Call for multiple airports
+["LFGJ", "LSGC"].forEach(code => fetchAviationData(code));

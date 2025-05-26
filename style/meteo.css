@@ -31,7 +31,7 @@ main {
 .mancheContainer {
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
-  /* padding: 10% 0 0 0; */
+  padding: 0 var(--base_font_size);
 }
 
 .MaJ {
@@ -60,20 +60,18 @@ main {
 }
 
 .backPiste {
-  content: "";
+  display: none; /* <--- this line ensures it’s hidden by default */
   position: absolute;
   height: 50%;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   z-index: 5;
-
   background-image: conic-gradient(
     #00000000 50%,
     aliceblue 50%,
     aliceblue calc(50% + var(--wedge-size)),
     #00000000 calc(50% + var(--wedge-size))
   );
-
   transform: rotate(var(--wedge-rotate));
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   border: 1.5px solid rgba(237, 237, 237, 0.25);

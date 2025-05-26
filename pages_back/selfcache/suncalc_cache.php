@@ -4,7 +4,7 @@ header('Content-Type: application/json');
 $lat = 46.9;
 $lon = 6.3667;
 $today = date('Y-m-d');
-$cacheDir = '/tmp/suncalc';
+$cacheDir = '../tmp/suncalc';
 $cacheFile = "$cacheDir/suncalc.json";
 $cacheDuration = 43200; // 2 minutes
 
