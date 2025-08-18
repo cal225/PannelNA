@@ -10,7 +10,7 @@ body {
 }
 * {
   color: aliceblue;
-  font-family: poppins;
+  font-family: poppins, monospace;
   word-spacing: 0.1ch;
 }
 main {
@@ -63,7 +63,7 @@ main {
   display: none; /* <--- this line ensures it’s hidden by default */
   position: absolute;
   height: 50%;
-  aspect-ratio: 1 / 1;
+  width: 50%;
   border-radius: 50%;
   z-index: 5;
   background-image: conic-gradient(
@@ -223,15 +223,15 @@ background: linear-gradient( to bottom, , rgba(255, 255, 255, 0.15) );
 
 .wind {
   position: relative;
-  height: calc(var(--sub_title_size) + 4.5rem + var(--base_font_size));
-  aspect-ratio: 1/1;
+  height: calc(var(--sub_title_size) + 6.5rem + var(--base_font_size));
+  width: calc(var(--sub_title_size) + 6rem + var(--base_font_size));
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .wind p {
-  font-size: calc(var(--small_font_size) - 0.2rem);
+  font-size: var(--small_font_size);
   position: absolute;
 }
 
@@ -254,7 +254,7 @@ background: linear-gradient( to bottom, , rgba(255, 255, 255, 0.15) );
 
 .wind .left {
   left: 0;
-  bottom: 50%;
+  /* bottom: 50%; */
   transform: translate(-50%, 0);
 }
 .wind .up {
@@ -264,8 +264,8 @@ background: linear-gradient( to bottom, , rgba(255, 255, 255, 0.15) );
 }
 .wind .right {
   right: 0;
-  bottom: 50%;
-  transform: translate(-50%, 0);
+  /* bottom: 50%; */
+  /* transform: translate(-50%, 0); */
 }
 .wind .bttm {
   bottom: 0;

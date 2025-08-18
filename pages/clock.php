@@ -19,7 +19,7 @@ include 'header.php';
             <span class="clockType">LT</span>
         </div>
         <div class="LSFP">
-            <span class="clockType">LSFP</span>
+            <span class="clockType">LFSP</span>
         </div>
         <div class="outline frosted">
             <div class="clock" id="UTCclock">
@@ -36,7 +36,8 @@ include 'header.php';
         <div class="space"></div>
     </div>
 </main>
-<script src='../pages_back/clock.js'></script>;
+<script src='../pages_back/clockUTC.js'></script>;
+<script src='../pages_back/clockLOCAL.js'></script>;
 <?php
 include 'footer.php';
 ?>

@@ -31,6 +31,7 @@ main {
 
 .infoWrapper img {
   height: calc(var(--title-size) + 4rem);
+  width: calc(var(--title-size) + 4rem);
   aspect-ratio: 1/1;
   position: absolute;
   top: 50%;
@@ -40,6 +41,7 @@ main {
 
 .crop {
   height: calc(var(--title-size) + 4rem);
+  width: calc(var(--title-size) + 4rem);
   aspect-ratio: 1 / 1;
   display: inline-block;
   position: relative;
@@ -79,7 +81,11 @@ main {
 
 .MetarCode{
   font-weight: 500;
-  font-size: var(--base_font_size);
+  font-size: calc(var(--base_font_size) + 0.5rem);
+}
+
+.MaJ{
+    display: none;
 }
 
 @media screen and (max-width: 1900px) {
@@ -91,10 +97,12 @@ main {
   }
   .infoWrapper img {
     height: calc(var(--title-size) + 2rem);
+    width: calc(var(--title-size) + 2rem);
   }
 
   .crop {
     height: calc(var(--title-size) + 2rem);
+    width: calc(var(--title-size) + 2rem);
   }
   .PisteCode {
     font-size: calc(var(--sub_title_size) - 0.5rem);

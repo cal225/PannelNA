@@ -59,6 +59,7 @@ main {
   position: relative;
   aspect-ratio: 1/1;
   height: 430px;
+  width: 430px;
   border-radius: 100%;
 }
 

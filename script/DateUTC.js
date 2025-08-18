@@ -12,6 +12,21 @@ function updateUtcClock() {
   document.getElementById("utc-time").textContent = timeStr;
   document.getElementById("utc-date").textContent = dateStr;
 }
+function updateLocalClock() {
+  const now = new Date();
+  const hours = String(now.getHours()).padStart(2, "0");
+  const minutes = String(now.getMinutes()).padStart(2, "0");
+
+  const timeStr = `${hours}:${minutes}`;
+
+  const ltTimeEl = document.getElementById("lt-time");
+  if (ltTimeEl) ltTimeEl.textContent = timeStr;
+}
+
+setInterval(updateLocalClock, 1000);
+updateLocalClock();
+
 
 setInterval(updateUtcClock, 1000); // update every second
 updateUtcClock(); // run immediately
+

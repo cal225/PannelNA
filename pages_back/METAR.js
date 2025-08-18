@@ -6,7 +6,7 @@ async function fetchAviationData(icaoCode) {
   const tafP = wrapper.querySelector(".TafCode");
 
   try {
-    const response = await fetch(`/path/to/aviation_cache.php?icao=${icaoCode}`);
+    const response = await fetch(`http://www.panel.nextaviation.aero/pages_back/selfcache/aviation_cache.php?icao=${icaoCode}`);
     if (!response.ok) throw new Error("API error");
 
     const data = await response.json();
@@ -19,5 +19,5 @@ async function fetchAviationData(icaoCode) {
   }
 }
 
-// Call for multiple airports
+// Fetch for multiple ICAO codes
 ["LFGJ", "LSGC"].forEach(code => fetchAviationData(code));

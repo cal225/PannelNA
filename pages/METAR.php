@@ -31,7 +31,7 @@ include 'header.php';
             <div class="crop">
                 <img src="../assets/swiss.svg.png" alt="">
             </div>
-            <p class="alt">Alt : <span id="alt">300</span> ft</p>
+            <p class="alt">Alt : <span id="alt">3368</span> ft</p>
         </div>
         <div class="titleWraper">
             <p> METAR</p>
@@ -45,7 +45,7 @@ include 'header.php';
 </main>
 
 <?php
-putenv('METAR=Bearer rDahirOQPf9u5UajlxNP7GbD_rJDSEjbFTNRRfe2CMo');
+putenv('METAR=Bearer cVJu7da4o0GuccX3b4fghqCIn1DXrozwicZ2WVJZvzU');
 ?>
 
 <script>
