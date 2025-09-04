@@ -1,0 +1,140 @@
+body {
+    background-image: none;
+    background-color: rgb(71 71 71);
+    display: grid;
+    /* grid-auto-rows: calc(var(--title-size) + 8rem) auto; */
+}
+
+footer {
+    display: none;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+    padding-left: 4rem;
+}
+
+.date {
+    display: none;
+}
+
+.timeNdate {
+    width: 100%;
+    padding: 0.5rem 4rem;
+}
+
+header {
+    justify-content: flex-end;
+    background-color: rgb(43 43 43);
+    padding: 1rem 0;
+}
+
+.logoHeader img {
+    display: block;
+    height: calc(var(--title-size) + 4rem);
+}
+
+.logoHeader {
+    display: flex;
+    height: calc(var(--title-size) + 4rem);
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+    width: 100%;
+}
+
+.logoHeader p {
+    color: white;
+    font-size: calc(var(--title-size) - 0.5rem);
+}
+
+.LTWrapper {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-end;
+    font-size: calc(var(--title-size) - 0.5rem);
+    margin-right: 1rem;
+}
+
+.LTWrapper>span {
+    color: white;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    width: 100%;
+    border-spacing: 0;
+}
+
+.tbHeader {
+    font-size: var(--small_font_size);
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    padding: 0.5rem 0;
+    text-transform: uppercase;
+}
+
+.tbHeader:nth-child(2) {
+    /* width: 90%; */
+}
+
+tbody>* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+table .tbRow:nth-child(odd) {
+    background-color: rgba(0, 0, 0, 0.585);
+}
+
+.tbRow {
+    background-color: rgb(43 43 43);
+}
+
+.tbCell {
+    font-size: var(--base_font_size);
+    text-align: center;
+    font-weight: 100;
+}
+
+.DISPO {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /* gap: 2rem; */
+}
+
+.DISPO img {
+    height: var(--base_font_size);
+}
+
+.ETDWrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 0.4fr);
+    grid-area: l, r;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1rem;
+}
+
+.ETDWrapper>span{
+    white-space: nowrap;
+    text-transform: uppercase;
+}
+
+.ETD span {
+    color: #f4ca17;
+    font-weight: 100;
+}
+
+.equiP span {
+    font-weight: 100;
+}
+
+.EQUIPAGE {
+    display: flex;
+    text-transform: uppercase;
+}

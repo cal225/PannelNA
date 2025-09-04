@@ -1,11 +1,20 @@
 <?php
 $title = "meteo"; 
+include 'header.php';
+
 ?>
 <main>
-    <div class="leftContainer">
+    <section class="leftContainer">
         <?php include 'meteo/meteoleft.php'; ?>
-    </div>
-    <div class="rightContainer">
+    </section>
+    <section class="rightContainer">
         <?php include 'meteo/meteoright.php'; ?> 
-    </div>
+    </section>
 </main>
+<script src='../script/meteo.js'></script>
+<script src='../pages_back/forecast.js'></script>
+<script src="https://unpkg.com/suncalc@1.9.0/suncalc.js"></script>
+<script src='../pages_back/twilight.js'></script>
+<?php
+include 'footer.php';
+?>
